@@ -16,16 +16,16 @@ It fulfills the CSC299 milestone requirement:
    cd tasks1
 
 2. **Add a new task**:
-
-python tasks.py add "task"
+   ```bash
+   python tasks.py add "task"
 
 3. **List all tasks**:
-
-python tasks.py list
+   ```bash
+   python tasks.py list
 
 4. **Search for a task**:
-
-python tasks.py search "keyword"
+   ```bash
+   python tasks.py search "keyword"
 
 
 # Reflection 
@@ -62,3 +62,4 @@ For the next iteration, I intend to:
   5. Add error handling and input validation for better reliability.
 
 Through these improvements, I hope to evolve this simple command-line project into a more structured, modular, and scalable application.
+
