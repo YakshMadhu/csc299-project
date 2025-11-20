@@ -46,8 +46,9 @@ As a user, I want to add new drawing tasks and list all drawing tasks using a co
 **Acceptance Scenarios**:
 
 1. **Given** no tasks exist, **When** I run the CLI to add a task "Draw a cat", **Then** the task is saved and listed when I run the list command.
-2. **Given** several tasks exist, **When** I run the CLI to list tasks, **Then** all tasks are displayed in the order they were added.
+2. **Given** several tasks exist, **When** I run the CLI to list tasks, **Then** all tasks are displayed in alphabetical order (case-sensitive).
 3. **Given** the storage file is missing or empty, **When** I run the list command, **Then** I see an empty list or a friendly message.
+4. **Given** tasks "zebra", "Apple", "banana" exist, **When** I run the list command, **Then** they are displayed as "Apple", "banana", "zebra" (case-sensitive alphabetical order).
 
 ---
 
@@ -102,7 +103,7 @@ As a developer, I want the CLI logic and storage logic to be in separate modules
 ### Functional Requirements
 
 - **FR-001**: System MUST provide a CLI command to add a new drawing task with a description.
-- **FR-002**: System MUST provide a CLI command to list all drawing tasks.
+- **FR-002**: System MUST provide a CLI command to list all drawing tasks in alphabetical order (case-sensitive).
 - **FR-003**: System MUST store tasks persistently in a local file.
 - **FR-004**: System MUST separate CLI logic from storage logic in the codebase.
 - **FR-005**: System MUST handle file errors gracefully and never lose or corrupt tasks.
