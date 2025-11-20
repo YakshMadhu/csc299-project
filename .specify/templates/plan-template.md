@@ -50,6 +50,12 @@ specs/[###-feature]/
 └── tasks.md             # Phase 2 output (/speckit.tasks command - NOT created by /speckit.plan)
 ```
 
+**Documentation requirements:** The plan MUST specify what documentation will be created
+or updated for this feature (module README, `quickstart.md`, API docs, or user guides).
+If documentation cannot be completed as part of the feature iteration, the plan MUST link
+to a tracked issue with owner and due date. Plans that do not include documentation outputs
+MUST include a documented justification and mitigation.
+
 ### Source Code (repository root)
 <!--
   ACTION REQUIRED: Replace the placeholder tree below with the concrete layout

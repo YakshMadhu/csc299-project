@@ -1,7 +1,8 @@
 <!--
 Sync Impact Report
 
-- Version change: template -> 1.0.0 (initial fill)
+-- Version change: 1.0.0 -> 1.1.0 (added documentation requirement)
+-- Modified sections: Development Workflow (documentation requirement added)
 - Modified principles: (introduced the following principles)
 	- Code Clarity & Readability
 	- Simplicity & Minimal Surface Area
@@ -92,6 +93,12 @@ Rationale: Consistent UX reduces user errors and support overhead; it enables st
 	where relevant.
 - Performance: Performance targets (latency, throughput) MUST be defined in the plan and validated in
 	benchmarks when applicable.
+- Documentation: All code or user-facing changes merged to the `master` branch MUST include
+  created or updated documentation that lives in the repository (for example: `docs/`, `quickstart.md`,
+  or an updated module README). If documentation cannot be delivered in the same PR, the PR MUST
+  include a linked issue that tracks the documentation work with a clear owner and due date; merging
+  to `master` without required documentation is NOT allowed except via a documented exception
+  approved by maintainers.
 
 ## Development Workflow
 
@@ -122,4 +129,4 @@ Compliance and review expectations:
 - Non-conforming changes are allowed only with documented justification and an explicit risk
 	mitigation plan; such changes MUST be short-lived and tracked via tasks.
 
-**Version**: 1.0.0 | **Ratified**: 2025-11-19 | **Last Amended**: 2025-11-19
+**Version**: 1.1.0 | **Ratified**: 2025-11-19 | **Last Amended**: 2025-11-19

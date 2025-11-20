@@ -14,6 +14,11 @@ tasks generated for a feature MUST include explicit test tasks for the story pri
 that require them. If tests are omitted for a given story, the plan/spec MUST document a
 justification and a mitigation plan.
 
+**Documentation tasks**: For every P1 story the generated tasks MUST include one or more
+documentation tasks (for example: update `docs/`, update `quickstart.md`, or add module
+README). Documentation tasks are required and MUST be completed before merging to `master`,
+unless a documented exception with an approved issue is referenced in the PR.
+
 **Organization**: Tasks are grouped by user story to enable independent implementation and testing of each story.
 
 ## Format: `[ID] [P?] [Story] Description`

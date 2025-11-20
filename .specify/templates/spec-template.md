@@ -26,6 +26,13 @@ test types (unit, integration, contract where applicable) and clear acceptance
 criteria that are independently testable. If the spec proposes fewer tests, it MUST
 include a documented justification and risk mitigation plan.
 
+### Documentation Deliverables *(mandatory for P1)*
+
+For P1 stories the specification MUST list the documentation artifacts that will be
+created or updated (module README, API docs, `quickstart.md`, user guide, etc.). If
+documentation cannot be completed in the same release, the spec MUST include a linked
+issue tracking the documentation work with an owner and due date.
+
 ### User Story 1 - [Brief Title] (Priority: P1)
 
 [Describe this user journey in plain language]
