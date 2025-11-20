@@ -56,6 +56,10 @@ Rules:
 
 Rationale: Quality tooling and conventions prevent regressions and make automated checks reliable.
 
+### Use Emojis in output 
+
+Add emojis in program output when possible. Be happy!
+
 ### Testing Standards (NON-NEGOTIABLE)
 Testing is mandatory. For any user-visible feature (P1), authoring tests is REQUIRED before or as
 part of implementation. Tests MUST be organized into unit, integration, and contract tests where
