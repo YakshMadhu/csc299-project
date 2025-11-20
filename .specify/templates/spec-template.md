@@ -18,7 +18,13 @@
   - Tested independently
   - Deployed independently
   - Demonstrated to users independently
--->
+  -->
+
+Testing requirements: This specification MUST follow the project's Constitution
+(`.specify/memory/constitution.md`). For P1 user stories the spec MUST declare required
+test types (unit, integration, contract where applicable) and clear acceptance
+criteria that are independently testable. If the spec proposes fewer tests, it MUST
+include a documented justification and risk mitigation plan.
 
 ### User Story 1 - [Brief Title] (Priority: P1)
 

@@ -8,7 +8,11 @@ description: "Task list template for feature implementation"
 **Input**: Design documents from `/specs/[###-feature-name]/`
 **Prerequisites**: plan.md (required), spec.md (required for user stories), research.md, data-model.md, contracts/
 
-**Tests**: The examples below include test tasks. Tests are OPTIONAL - only include them if explicitly requested in the feature specification.
+**Tests**: Tests are REQUIRED per the project Constitution for P1 stories. For P1 stories,
+include unit tests and at least one integration or contract test as applicable. The
+tasks generated for a feature MUST include explicit test tasks for the story priorities
+that require them. If tests are omitted for a given story, the plan/spec MUST document a
+justification and a mitigation plan.
 
 **Organization**: Tasks are grouped by user story to enable independent implementation and testing of each story.
 

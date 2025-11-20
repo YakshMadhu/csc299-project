@@ -31,7 +31,10 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+This section MUST reference the project constitution at `.specify/memory/constitution.md`.
+For each applicable principle, list how the proposed plan satisfies the principle or provide a
+justified deviation with a mitigation and timeline. Plans without a completed "Constitution Check"
+MUST NOT proceed to Phase 0 research.
 
 ## Project Structure
 
