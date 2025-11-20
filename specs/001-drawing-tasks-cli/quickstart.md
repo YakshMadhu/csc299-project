@@ -32,7 +32,7 @@ drawing-tasks add "Draw a cat"
 
 **Expected Output**:
 ```
-✓ Task added: "Draw a cat"
+✓ Task added: Draw a cat
 ```
 
 ### List All Tasks
@@ -47,7 +47,7 @@ drawing-tasks list
 
 **Expected Output**:
 ```
-Drawing Tasks:
+📝 Drawing Tasks:
 1. Draw a cat
 2. Paint a landscape
 3. Sketch a portrait
@@ -66,7 +66,7 @@ python -m src.cli.main list
 
 **Expected Output**:
 ```
-Drawing Tasks:
+📝 Drawing Tasks:
 1. Apple
 2. banana
 3. zebra
@@ -80,7 +80,9 @@ python -m src.cli.main add ""
 ```
 **Output**:
 ```
-Error: Task description cannot be empty. Please provide a valid task description.
+Error: Task description cannot be empty
+Cause: No description provided
+Remediation: Please provide a valid task description
 ```
 
 ### File Permission Error
@@ -90,7 +92,9 @@ python -m src.cli.main add "New task"
 ```
 **Output**:
 ```
-Error: Cannot save task. Cause: Insufficient permissions. Remediation: Check file permissions for ~/.drawing-tasks/tasks.json
+Error: Failed to save tasks
+Cause: Permission denied
+Remediation: Check file permissions for ~/.drawing-tasks/tasks.json
 ```
 
 ### Corrupted Storage File
@@ -100,7 +104,9 @@ python -m src.cli.main list
 ```
 **Output**:
 ```
-Error: Tasks file is corrupted. Cause: Invalid JSON format. Remediation: Backup and delete ~/.drawing-tasks/tasks.json to start fresh.
+Error: Tasks file is corrupted
+Cause: Invalid JSON format
+Remediation: Backup and delete ~/.drawing-tasks/tasks.json to start fresh
 ```
 
 ## Development
