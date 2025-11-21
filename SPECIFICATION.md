@@ -927,15 +927,15 @@ This spec documents expected behavior for everything implemented.
 # ✅ **Prototype 3 — Planned AI Enhancements**
 
 Prototype 3 focuses entirely on improving the intelligence and automation of the system.
-These features extend the AI agent capabilities added in Prototype 1 and 2.
+These features extend the AI agent capabilities added in Prototypes 1 and 2.
 
 ### **1. AI Task Auto-Analysis**
 
 A command that analyzes all tasks and gives:
 
-* which ones are critical
-* which ones are overdue
-* which ones the user should focus on today.
+* Which ones are critical
+* Which ones are overdue
+* Which ones should the user focus on today?
 
 ### **2. AI Generate Tasks From a Note**
 
@@ -998,7 +998,7 @@ AI rewrites or enhances a selected note to make:
 
 * structure clearer
 * explanations stronger
-* learning points more explicit
+* learning points are more explicit
 
 Command:
 
@@ -1008,7 +1008,7 @@ ai-improve-note <id>
 
 ### **9. Portfolio Feedback Mode**
 
-User provides a description of an artwork:
+User describes an artwork:
 
 ```
 portfolio-feedback
