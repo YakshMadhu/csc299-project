@@ -3,6 +3,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 from typing import List, Dict, Any
+from .models import now_iso
+
 
 from .models import Note, Task
 
@@ -10,6 +12,9 @@ BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
 NOTES_FILE = DATA_DIR / "notes.json"
 TASKS_FILE = DATA_DIR / "tasks.json"
+LOG_DIR = BASE_DIR / "logs"
+LOG_FILE = LOG_DIR / "commands.log"
+
 
 
 def _ensure_data_dir() -> None:
@@ -67,3 +72,9 @@ def save_tasks(tasks: List[Task]) -> None:
 
 def next_task_id(tasks: List[Task]) -> int:
     return max((t.id for t in tasks), default=0) + 1
+
+def log_command(command: str) -> None:
+    LOG_DIR.mkdir(parents=True, exist_ok=True)
+    timestamp = now_iso()
+    with LOG_FILE.open("a", encoding="utf-8") as f:
+        f.write(f"[{timestamp}] {command}\n")

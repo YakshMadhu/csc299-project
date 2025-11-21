@@ -5,6 +5,8 @@ import cmd
 from . import pkms, task_manager
 from .pkms import find_note_by_id
 from .ai_agents import summarize_note_for_artist, suggest_practice_routine
+from .storage import log_command
+
 
 
 BANNER = r"""
@@ -48,6 +50,8 @@ Commands:
 
 
 def handle_command(line: str) -> bool:
+    log_command(line)
+
     parts = line.strip().split()
     if not parts:
         return True

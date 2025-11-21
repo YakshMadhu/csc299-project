@@ -35,6 +35,18 @@
       "created_at": "2025-11-20T20:28:44",
       "completed_at": null,
       "updated_at": "2025-11-20T21:13:36"
+    },
+    {
+      "id": 4,
+      "title": "How to foreshorten hands porprly",
+      "description": "USe simple boxes and gradually add definiton",
+      "priority": "low",
+      "status": "todo",
+      "category": "gesture",
+      "due_date": null,
+      "created_at": "2025-11-20T22:02:37",
+      "completed_at": null,
+      "updated_at": "2025-11-20T22:02:37"
     }
   ]
 }
