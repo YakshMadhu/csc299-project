@@ -502,11 +502,9 @@ I will also fix the order, combine similar items, and make it coherent.
 
 ---
 
-
 # ## **Prototype 2 — Planned Improvements**
 
-Prototype 2 focuses on improving usability, searchability, and content management.
-These additions build directly on Prototype 1 and reflect natural user needs.
+Prototype 2 focuses on improving usability, searchability, and content management. These additions build directly on Prototype 1 and reflect natural user needs.
 
 ### **1. Edit Notes**
 
@@ -671,6 +669,257 @@ Goal:
 Encryption is **local only**, no cloud sync.
 
 ---
+Here is a **clean, professor-ready Prototype 2 section** that you can paste directly into your **SPECIFICATION.md** underneath Prototype 1.
 
+It is formatted exactly the way a real software specification should be written — structured, clear, technical, and ready for grading.
 
+---
 
+# ✅ **Prototype 2 — Specification (Planned & Implemented Improvements)**
+
+Prototype 2 builds directly on Prototype 1 with the goal of making ArtGrow more usable, more flexible, and more aligned with the workflow of real artists. This prototype adds **editing**, **better searching**, **status improvements**, **tag filtering**, **note deletion**, **logging**, and **automatic timestamps**.
+
+These upgrades refine the original PKMS + Task Manager and prepare the system for future prototypes.
+
+---
+
+## **1. Goals of Prototype 2**
+
+Prototype 2 focuses on:
+
+* Improving **content correction and editing** abilities
+* Enhancing **search and filtering**
+* Increasing workflow quality with **in-progress status**
+* Adding **safe deletion** for notes
+* Improving system transparency with **logging**
+* Ensuring data remains consistent with **auto timestamps**
+
+This prototype does NOT add new AI features; it improves the core PKMS + Task Manager experience.
+
+---
+
+# **2. New Features Added in Prototype 2**
+
+---
+
+## **2.1 Edit Notes**
+
+### **Command:**
+
+```
+edit-note <id>
+```
+
+### **Description:**
+
+Allows the user to modify an existing note’s:
+
+* title
+* content
+* tags
+
+When editing is complete, the system automatically updates:
+
+* `updated_at` timestamp
+
+### **Purpose:**
+
+Users often make mistakes or want to refine notes. Editing improves long-term usability and accuracy of the PKMS.
+
+---
+
+## **2.2 Edit Tasks**
+
+### **Command:**
+
+```
+edit-task <id>
+```
+
+### **Editable Fields:**
+
+* title
+* description
+* priority (low/medium/high)
+* category
+* due date
+
+### **Purpose:**
+
+Tasks evolve as the artist refines their study plan. Editing allows dynamic updates instead of deleting/recreating tasks.
+
+---
+
+## **2.3 Improved Search Engine (Multi-Keyword Search)**
+
+### **Commands:**
+
+```
+search-notes <keywords>
+search-tasks <keywords>
+```
+
+### **Behavior:**
+
+* Supports **multiple keywords**
+* Supports **partial matches**
+* Returns entries that match ANY keyword
+* Makes searching more powerful and flexible
+
+### **Purpose:**
+
+Artists often need to search multiple related topics at once. This creates a “Notion-like” experience in a terminal.
+
+---
+
+## **2.4 Add “in-progress” Task Status**
+
+### **Command:**
+
+```
+start-task <id>
+```
+
+### **Behavior:**
+
+* Changes status from `todo` → `in-progress`
+* Automatically updates `updated_at`
+* Visible inside:
+
+```
+list-tasks in-progress
+```
+
+### **Purpose:**
+
+Represents real workflow:
+
+✔ todo → in-progress → done
+
+Makes the task system more realistic and practical.
+
+---
+
+## **2.5 Tag-Based Note Filtering**
+
+### **Command:**
+
+```
+filter-notes tag <tagname>
+```
+
+### **Behavior:**
+
+* Filters notes by tag
+* Useful for grouping by subject (e.g., anatomy, perspective, gesture)
+
+### **Purpose:**
+
+Artists often study by topic. Tag filtering helps them locate related notes instantly.
+
+---
+
+## **2.6 Delete Notes (with Safety Confirmation)**
+
+### **Command:**
+
+```
+delete-note <id>
+```
+
+### **Workflow:**
+
+System asks:
+
+```
+Are you sure you want to delete this note? (y/n)
+```
+
+Deletion only occurs on confirmation.
+
+### **Purpose:**
+
+Prevents accidental loss while giving control over note cleanup.
+
+---
+
+## **2.7 Command History Logging**
+
+### **Log file created:**
+
+```
+final/logs/commands.log
+```
+
+### **Each entry tracks:**
+
+* timestamp
+* command used
+* arguments
+
+### **Purpose:**
+
+* Helps user understand usage patterns
+* Supports debugging
+* Shows PKMS evolution over time
+
+---
+
+## **2.8 Automatic Timestamps Everywhere**
+
+Prototype 2 expands timestamp usage so that the system tracks:
+
+* note edits
+* task edits
+* status changes
+* deletions
+* command history events
+
+### **Purpose:**
+
+This gives the user clearer visibility into their progress and makes the system feel more professional and reliable.
+
+---
+
+# **3. Summary of Architecture Changes in Prototype 2**
+
+| Component           | Description                                                                 |
+| ------------------- | --------------------------------------------------------------------------- |
+| **pkms.py**         | Added edit-note, delete-note, tag filter, and timestamp updates             |
+| **task_manager.py** | Added edit-task, start-task, multi-keyword search, improved status handling |
+| **storage.py**      | Added command logging system                                                |
+| **models.py**       | Added `updated_at` to Task model and edit timestamp logic                   |
+| **main.py**         | Added routing for all new commands in the CLI                               |
+
+---
+
+# **4. Out-of-Scope Features (Future Prototypes)**
+
+These are NOT included in Prototype 2:
+
+❌ encryption
+❌ nested folders
+❌ multi-user sync
+❌ GUI
+❌ Notion-style linking
+❌ complex AI agents
+
+These remain possibilities for Prototype 3 or 4.
+
+---
+
+# **5. Status of Prototype 2**
+
+### Prototype 2 is **complete**, delivering:
+
+✔ editing
+✔ improved search
+✔ status upgrades
+✔ tag filtering
+✔ deletion
+✔ logging
+✔ timestamps
+
+This spec documents expected behavior for everything implemented.
+
+---
