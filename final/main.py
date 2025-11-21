@@ -119,6 +119,20 @@ def handle_command(line: str) -> bool:
             return True
         task_manager.mark_task_done(task_id)
         return True
+    
+    if cmd == "start-task":
+        if not args:
+            print("Usage: start-task <id>")
+            return True
+        try:
+            tid = int(args[0])
+        except ValueError:
+            print("Task id must be an integer.")
+            return True
+
+        task_manager.start_task(tid)
+        return True
+
 
     if cmd == "delete-task":
         if not args:

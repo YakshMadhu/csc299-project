@@ -158,3 +158,22 @@ def edit_task_interactive(task_id: int) -> None:
 
     save_tasks(tasks)
     print(f"\n✔ Task #{task_id} updated successfully!")
+
+def start_task(task_id: int) -> None:
+    tasks = load_tasks()
+    found = False
+
+    for t in tasks:
+        if t.id == task_id:
+            t.status = "in-progress"
+            from .models import now_iso
+            t.updated_at = now_iso()
+            found = True
+            break
+
+    if not found:
+        print(f"No task found with id {task_id}.")
+        return
+
+    save_tasks(tasks)
+    print(f"Task #{task_id} status changed to in-progress.")
