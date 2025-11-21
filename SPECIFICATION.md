@@ -491,3 +491,191 @@ You can:
 
 ---
 
+Perfect — these are **excellent**, clean, realistic Prototype 2 features.
+Your list is exactly the kind of incremental improvement your professor expects.
+Now I’ll turn your raw list into **clean, professor-ready SPECIFICATION.md sections** for:
+
+* **Prototype 2 — Planned Improvements**
+* **Prototype 3 — Stretch Ideas**
+
+I will also fix the order, combine similar items, and make it coherent.
+
+---
+
+# ✅ **Add this to SPECIFICATION.md**
+
+Below Prototype 1, paste the following:
+
+---
+
+# ## **Prototype 2 — Planned Improvements**
+
+Prototype 2 focuses on improving usability, searchability, and content management.
+These additions build directly on Prototype 1 and reflect natural user needs.
+
+### **1. Edit Notes**
+
+Add a command:
+
+```
+edit-note <id>
+```
+
+Users will be able to modify:
+
+* title
+* content
+* tags
+
+Changes update the `updated_at` timestamp automatically.
+
+---
+
+### **2. Edit Tasks**
+
+Add a command:
+
+```
+edit-task <id>
+```
+
+Editable fields:
+
+* title
+* description
+* priority
+* category
+* due date
+
+This significantly improves the task workflow for artists refining study plans.
+
+---
+
+### **3. Improved Search Engine**
+
+Enhance searching for both notes and tasks:
+
+* support **partial matches** (already partly works but we refine it)
+* support **multiple keywords**
+* allow results sorted by relevance (optional stretch)
+
+Example queries:
+
+```
+search-notes anatomy gesture
+search-tasks shading hands
+```
+
+This makes the system feel more “Notion-like.”
+
+---
+
+### **4. Add “in-progress” Status**
+
+Currently status options are:
+
+```
+todo
+done
+```
+
+Prototype 2 adds:
+
+```
+in-progress
+```
+
+New commands:
+
+```
+start-task <id>
+in-progress tasks visible in list-tasks
+```
+
+This supports better workflow modeling.
+
+---
+
+### **5. Tag-Based Note Filtering**
+
+Add a command:
+
+```
+filter-notes tag anatomy
+filter-notes tag gesture
+```
+
+Allows artists to group study notes by topic.
+
+---
+
+### **6. Delete Notes (with confirmation)**
+
+Prototype 1 intentionally does NOT allow deleting notes.
+
+Prototype 2 adds:
+
+```
+delete-note <id>
+```
+
+With safety confirmation:
+
+```
+Are you sure? (y/n)
+```
+
+---
+
+### **7. Command History / Logging**
+
+Add a simple log file:
+
+```
+logs/commands.log
+```
+
+Record:
+
+* timestamp
+* executed command
+* optional arguments
+
+Purpose:
+
+* debugging
+* user awareness
+* meets “AI agent / PKMS evolution” documentation
+
+---
+
+### **8. Automatic Timestamps Everywhere**
+
+Prototype 1 already adds timestamps for creation and updates.
+
+Prototype 2 adds automatic timestamps to:
+
+* task status changes
+* task edits
+* note edits
+* logs
+
+This helps artists track progress.
+
+---
+
+### **9. Lightweight Encryption (Optional for P2 but doable)**
+
+Encrypt note content using simple AES + password.
+
+Goal:
+
+* protect sensitive study notes or personal thoughts
+* keep it simple enough for terminal use
+
+Encryption is **local only**, no cloud sync.
+
+---
+
+
+
