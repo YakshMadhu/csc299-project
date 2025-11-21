@@ -66,6 +66,56 @@ def view_note(note_id: int) -> None:
     print(n.content)
     print("=" * 40)
 
+def edit_note_interactive(note_id: int) -> None:
+    notes = load_notes()
+    target = None
+    for n in notes:
+        if n.id == note_id:
+            target = n
+            break
+
+    if not target:
+        print(f"No note found with id {note_id}")
+        return
+
+    print(f"Editing Note #{note_id}")
+    print("Leave any field blank to keep the current value.\n")
+
+    # --- Title ---
+    print(f"Current title: {target.title}")
+    new_title = input("New title: ").strip()
+    if new_title:
+        target.title = new_title
+
+    # --- Content ---
+    print("\nCurrent content:")
+    print(target.content)
+    print("\nEnter new content (end with empty line). Leave empty to keep existing:")
+    new_lines = []
+    while True:
+        line = input()
+        if not line.strip():
+            break
+        new_lines.append(line)
+
+    if new_lines:
+        target.content = "\n".join(new_lines)
+
+    # --- Tags ---
+    print(f"\nCurrent tags: {', '.join(target.tags) if target.tags else '-'}")
+    new_tags = input("New tags (comma-separated): ").strip()
+    if new_tags:
+        target.tags = [t.strip() for t in new_tags.split(",") if t.strip()]
+
+    # --- Update timestamp ---
+    from .models import now_iso
+    target.updated_at = now_iso()
+
+    # --- Save changes ---
+    save_notes(notes)
+    print(f"\n✔ Note #{note_id} updated successfully!")
+
+
 
 def search_notes(query: str) -> None:
     query = query.lower().strip()

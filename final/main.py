@@ -76,6 +76,19 @@ def handle_command(line: str) -> bool:
             return True
         pkms.view_note(note_id)
         return True
+    
+    if cmd == "edit-note":
+        if not args:
+            print("Usage: edit-note <id>")
+            return True
+        try:
+            nid = int(args[0])
+        except ValueError:
+            print("Note id must be an integer.")
+            return True
+
+        pkms.edit_note_interactive(nid)
+        return True
 
     if cmd == "search-notes":
         if not args:

@@ -1,0 +1,15 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Muscles",
+      "description": "",
+      "priority": "low",
+      "status": "todo",
+      "category": "study",
+      "due_date": "11/20/2025",
+      "created_at": "2025-11-20T18:24:27",
+      "completed_at": null
+    }
+  ]
+}
