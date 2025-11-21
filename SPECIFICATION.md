@@ -502,11 +502,6 @@ I will also fix the order, combine similar items, and make it coherent.
 
 ---
 
-# ✅ **Add this to SPECIFICATION.md**
-
-Below Prototype 1, paste the following:
-
----
 
 # ## **Prototype 2 — Planned Improvements**
 
