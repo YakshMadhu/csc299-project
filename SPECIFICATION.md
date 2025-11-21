@@ -922,4 +922,104 @@ These remain possibilities for Prototype 3 or 4.
 
 This spec documents expected behavior for everything implemented.
 
+```
+
+# ✅ **Prototype 3 — Planned AI Enhancements**
+
+Prototype 3 focuses entirely on improving the intelligence and automation of the system.
+These features extend the AI agent capabilities added in Prototype 1 and 2.
+
+### **1. AI Task Auto-Analysis**
+
+A command that analyzes all tasks and gives:
+
+* which ones are critical
+* which ones are overdue
+* which ones the user should focus on today.
+
+### **2. AI Generate Tasks From a Note**
+
+Create tasks automatically based on the content of a selected note.
+Example:
+
+```
+ai-generate-tasks 2
+```
+
+### **3. AI Skill Gap Analysis**
+
+Given user struggles, notes, and tasks, the AI identifies:
+
+* weak areas
+* missing topics
+* suggested learning priorities
+
+### **4. Smart Chat Mode for Artists**
+
+A conversational assistant:
+
+```
+art-chat
+```
+
+Behaves like a drawing mentor:
+
+* answers art questions
+* references stored notes/tasks
+* gives exercise suggestions
+
+### **5. AI Auto-Tag Notes**
+
+AI reads a note and automatically assigns tags.
+Useful for long notes or beginners who don’t know tagging conventions.
+
+### **6. AI Summaries for All Notes**
+
+A bulk summarizer:
+
+```
+ai-summary-all
+```
+
+Creates short summaries for every note to help users review quickly.
+
+### **7. Practice Routine 2.0**
+
+More advanced version of the existing practice routine:
+
+* time-based
+* difficulty-based
+* skill-focused
+* uses note content + task history
+
+### **8. Improve-Note Command**
+
+AI rewrites or enhances a selected note to make:
+
+* structure clearer
+* explanations stronger
+* learning points more explicit
+
+Command:
+
+```
+ai-improve-note <id>
+```
+
+### **9. Portfolio Feedback Mode**
+
+User provides a description of an artwork:
+
+```
+portfolio-feedback
+```
+
+AI gives:
+
+* strengths
+* weaknesses
+* composition notes
+* gesture/structure advice
+
 ---
+
