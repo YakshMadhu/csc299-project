@@ -1,4 +1,4 @@
-# final/models.py
+
 from __future__ import annotations
 from dataclasses import dataclass, asdict
 from datetime import datetime
@@ -51,12 +51,16 @@ class Task:
     id: int
     title: str
     description: str
-    priority: str       # "low" | "medium" | "high"
-    status: str         # "todo" | "in-progress" | "done"
+    priority: str
+    status: str         # todo | in-progress | done
     category: Optional[str]
-    due_date: Optional[str]   # "YYYY-MM-DD" or None
+    due_date: Optional[str]
     created_at: str
     completed_at: Optional[str]
+    updated_at: str = ""
+
+    def to_dict(self) -> Dict[str, Any]:
+        return asdict(self)
 
     @classmethod
     def create(
@@ -72,6 +76,7 @@ class Task:
         priority = (priority or "medium").lower().strip()
         if priority not in ("low", "medium", "high"):
             priority = "medium"
+
         return cls(
             id=task_id,
             title=title.strip(),
@@ -82,14 +87,17 @@ class Task:
             due_date=due_date.strip() if due_date else None,
             created_at=ts,
             completed_at=None,
+            updated_at=ts,
         )
+
+    def mark_in_progress(self) -> None:
+        self.status = "in-progress"
+        self.updated_at = now_iso()
 
     def mark_done(self) -> None:
         self.status = "done"
         self.completed_at = now_iso()
-
-    def to_dict(self) -> Dict[str, Any]:
-        return asdict(self)
+        self.updated_at = now_iso()
 
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> "Task":
@@ -103,4 +111,5 @@ class Task:
             due_date=data.get("due_date"),
             created_at=data.get("created_at", now_iso()),
             completed_at=data.get("completed_at"),
+            updated_at=data.get("updated_at", now_iso()),
         )

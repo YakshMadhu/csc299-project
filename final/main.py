@@ -29,6 +29,7 @@ Commands:
   add-task                    - create a new task
   list-tasks [status]         - list tasks (optionally filter by todo/in-progress/done)
   complete-task <id>          - mark a task as done
+  start-task <id>             - mark a task as in-progress
   delete-task <id>            - delete a task
   search-tasks <query>        - search tasks
 
@@ -102,6 +103,20 @@ def handle_command(line: str) -> bool:
     if cmd == "add-task":
         task_manager.add_task_interactive()
         return True
+    
+    if cmd == "start-task":
+        if not args:
+            print("Usage: start-task <id>")
+            return True
+
+        try:
+            task_id = int(args[0])
+        except ValueError:
+            print("Task id must be an integer.")
+            return True
+        task_manager.start_task(task_id)
+        return True
+
 
     if cmd == "list-tasks":
         status = args[0] if args else None
@@ -119,20 +134,6 @@ def handle_command(line: str) -> bool:
             return True
         task_manager.mark_task_done(task_id)
         return True
-    
-    if cmd == "start-task":
-        if not args:
-            print("Usage: start-task <id>")
-            return True
-        try:
-            tid = int(args[0])
-        except ValueError:
-            print("Task id must be an integer.")
-            return True
-
-        task_manager.start_task(tid)
-        return True
-
 
     if cmd == "delete-task":
         if not args:

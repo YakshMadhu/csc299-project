@@ -9,7 +9,8 @@
       "category": "study",
       "due_date": "11/20/2025",
       "created_at": "2025-11-20T18:24:27",
-      "completed_at": "2025-11-20T20:29:36"
+      "completed_at": "2025-11-20T20:29:36",
+      "updated_at": "2025-11-20T21:13:36"
     },
     {
       "id": 2,
@@ -20,18 +21,20 @@
       "category": "time pass",
       "due_date": "11-21-2025",
       "created_at": "2025-11-20T20:15:05",
-      "completed_at": null
+      "completed_at": null,
+      "updated_at": "2025-11-20T21:13:36"
     },
     {
       "id": 3,
       "title": "Clean paint brushes",
       "description": "Use proper materilas and water temp to make sure that the paint brushes dont get ruined\\",
       "priority": "high",
-      "status": "todo",
+      "status": "in-progress",
       "category": null,
       "due_date": null,
       "created_at": "2025-11-20T20:28:44",
-      "completed_at": null
+      "completed_at": null,
+      "updated_at": "2025-11-20T21:13:36"
     }
   ]
 }

@@ -1,4 +1,4 @@
-# final/task_manager.py
+
 from __future__ import annotations
 from typing import Optional
 
@@ -65,11 +65,30 @@ def mark_task_done(task_id: int) -> None:
             t.mark_done()
             found = True
             break
+
     if not found:
         print(f"No task found with id {task_id}.")
         return
+
     save_tasks(tasks)
     print(f"Task #{task_id} marked as done.")
+
+
+def start_task(task_id: int) -> None:
+    tasks = load_tasks()
+    found = False
+    for t in tasks:
+        if t.id == task_id:
+            t.mark_in_progress()
+            found = True
+            break
+
+    if not found:
+        print(f"No task found with id {task_id}.")
+        return
+
+    save_tasks(tasks)
+    print(f"Task #{task_id} marked as in-progress.")
 
 
 def delete_task(task_id: int) -> None:
@@ -78,6 +97,7 @@ def delete_task(task_id: int) -> None:
     if len(new_tasks) == len(tasks):
         print(f"No task found with id {task_id}.")
         return
+
     save_tasks(new_tasks)
     print(f"Deleted task #{task_id}.")
 
@@ -94,86 +114,8 @@ def search_tasks(query: str) -> None:
     if not matches:
         print(f"No tasks matched '{query}'.")
         return
+
     print(f"Tasks matching '{query}':")
     for t in matches:
         cat = t.category or "-"
         print(f"- [{t.id}] ({t.status}) [{cat}] {t.title}")
-
-def edit_task_interactive(task_id: int) -> None:
-    tasks = load_tasks()
-    target = None
-
-    for t in tasks:
-        if t.id == task_id:
-            target = t
-            break
-
-    if not target:
-        print(f"No task found with id {task_id}.")
-        return
-
-    print(f"Editing Task #{task_id}")
-    print("Leave any field blank to keep the current value.\n")
-
-    # --- Title ---
-    print(f"Current title: {target.title}")
-    new_title = input("New title: ").strip()
-    if new_title:
-        target.title = new_title
-
-    # --- Description ---
-    print(f"\nCurrent description:\n{target.description}")
-    print("\nEnter new description (end with empty line). Leave empty to keep existing:")
-    new_lines = []
-    while True:
-        line = input()
-        if not line.strip():
-            break
-        new_lines.append(line)
-
-    if new_lines:
-        target.description = "\n".join(new_lines)
-
-    # --- Priority ---
-    print(f"\nCurrent priority: {target.priority}")
-    new_priority = input("New priority [low/medium/high]: ").strip().lower()
-    if new_priority in ("low", "medium", "high"):
-        target.priority = new_priority
-
-    # --- Category ---
-    print(f"\nCurrent category: {target.category or '-'}")
-    new_category = input("New category (optional): ").strip()
-    if new_category:
-        target.category = new_category
-
-    # --- Due Date ---
-    print(f"\nCurrent due date: {target.due_date or '-'}")
-    new_due = input("New due date (YYYY-MM-DD): ").strip()
-    if new_due:
-        target.due_date = new_due
-
-    # Update timestamp
-    from .models import now_iso
-    target.updated_at = now_iso()
-
-    save_tasks(tasks)
-    print(f"\n✔ Task #{task_id} updated successfully!")
-
-def start_task(task_id: int) -> None:
-    tasks = load_tasks()
-    found = False
-
-    for t in tasks:
-        if t.id == task_id:
-            t.status = "in-progress"
-            from .models import now_iso
-            t.updated_at = now_iso()
-            found = True
-            break
-
-    if not found:
-        print(f"No task found with id {task_id}.")
-        return
-
-    save_tasks(tasks)
-    print(f"Task #{task_id} status changed to in-progress.")
