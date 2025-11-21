@@ -133,3 +133,21 @@ def search_notes(query: str) -> None:
     for n in matches:
         tags_str = ", ".join(n.tags) if n.tags else "-"
         print(f"- [{n.id}] {n.title} (tags: {tags_str})")
+
+def filter_notes_by_tag(tag: str) -> None:
+    tag = tag.lower().strip()
+    notes = load_notes()
+
+    matches = [
+        n for n in notes
+        if any(tag == t.lower() for t in n.tags)
+    ]
+
+    if not matches:
+        print(f"No notes found with tag '{tag}'.")
+        return
+
+    print(f"Notes with tag '{tag}':")
+    for n in matches:
+        tags_str = ", ".join(n.tags) if n.tags else "-"
+        print(f"- [{n.id}] {n.title} (tags: {tags_str})")

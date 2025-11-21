@@ -1,5 +1,6 @@
 # final/main.py
 from __future__ import annotations
+import cmd
 
 from . import pkms, task_manager
 from .pkms import find_note_by_id
@@ -24,6 +25,8 @@ Commands:
   list-notes                  - list all notes
   view-note <id>              - show one note
   search-notes <query>        - search title/content/tags
+  filter-notes tag <name>     - list notes that contain a specific tag
+
 
   # Tasks
   add-task                    - create a new task
@@ -98,6 +101,17 @@ def handle_command(line: str) -> bool:
         query = " ".join(args)
         pkms.search_notes(query)
         return True
+    
+    # ----- Filter Notes by Tag -----
+    if cmd == "filter-notes":
+        if len(args) < 2 or args[0] != "tag":
+            print("Usage: filter-notes tag <tagname>")
+            return True
+
+        tag = " ".join(args[1:])
+        pkms.filter_notes_by_tag(tag)
+        return True
+
 
     # ----- Tasks -----
     if cmd == "add-task":
