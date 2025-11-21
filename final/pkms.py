@@ -151,3 +151,29 @@ def filter_notes_by_tag(tag: str) -> None:
     for n in matches:
         tags_str = ", ".join(n.tags) if n.tags else "-"
         print(f"- [{n.id}] {n.title} (tags: {tags_str})")
+
+def delete_note_interactive(note_id: int) -> None:
+    notes = load_notes()
+
+    note = None
+    for n in notes:
+        if n.id == note_id:
+            note = n
+            break
+
+    if not note:
+        print(f"No note found with id {note_id}.")
+        return
+
+    print(f"Are you sure you want to delete note #{note_id} ('{note.title}')? (y/n): ", end="")
+    choice = input().strip().lower()
+
+    if choice != "y":
+        print("Delete cancelled.")
+        return
+
+    # Remove the note
+    notes = [n for n in notes if n.id != note_id]
+    save_notes(notes)
+
+    print(f"Note #{note_id} deleted successfully.")

@@ -26,6 +26,8 @@ Commands:
   view-note <id>              - show one note
   search-notes <query>        - search title/content/tags
   filter-notes tag <name>     - list notes that contain a specific tag
+  delete-note <id>            - delete a note (with confirmation)
+
 
 
   # Tasks
@@ -101,6 +103,20 @@ def handle_command(line: str) -> bool:
         query = " ".join(args)
         pkms.search_notes(query)
         return True
+    
+    # ----- Delete Note -----
+    if cmd == "delete-note":
+        if not args:
+            print("Usage: delete-note <id>")
+            return True
+        try:
+            note_id = int(args[0])
+        except ValueError:
+            print("Note id must be an integer.")
+            return True
+        pkms.delete_note_interactive(note_id)
+        return True
+
     
     # ----- Filter Notes by Tag -----
     if cmd == "filter-notes":
