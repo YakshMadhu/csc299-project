@@ -98,3 +98,63 @@ def search_tasks(query: str) -> None:
     for t in matches:
         cat = t.category or "-"
         print(f"- [{t.id}] ({t.status}) [{cat}] {t.title}")
+
+def edit_task_interactive(task_id: int) -> None:
+    tasks = load_tasks()
+    target = None
+
+    for t in tasks:
+        if t.id == task_id:
+            target = t
+            break
+
+    if not target:
+        print(f"No task found with id {task_id}.")
+        return
+
+    print(f"Editing Task #{task_id}")
+    print("Leave any field blank to keep the current value.\n")
+
+    # --- Title ---
+    print(f"Current title: {target.title}")
+    new_title = input("New title: ").strip()
+    if new_title:
+        target.title = new_title
+
+    # --- Description ---
+    print(f"\nCurrent description:\n{target.description}")
+    print("\nEnter new description (end with empty line). Leave empty to keep existing:")
+    new_lines = []
+    while True:
+        line = input()
+        if not line.strip():
+            break
+        new_lines.append(line)
+
+    if new_lines:
+        target.description = "\n".join(new_lines)
+
+    # --- Priority ---
+    print(f"\nCurrent priority: {target.priority}")
+    new_priority = input("New priority [low/medium/high]: ").strip().lower()
+    if new_priority in ("low", "medium", "high"):
+        target.priority = new_priority
+
+    # --- Category ---
+    print(f"\nCurrent category: {target.category or '-'}")
+    new_category = input("New category (optional): ").strip()
+    if new_category:
+        target.category = new_category
+
+    # --- Due Date ---
+    print(f"\nCurrent due date: {target.due_date or '-'}")
+    new_due = input("New due date (YYYY-MM-DD): ").strip()
+    if new_due:
+        target.due_date = new_due
+
+    # Update timestamp
+    from .models import now_iso
+    target.updated_at = now_iso()
+
+    save_tasks(tasks)
+    print(f"\n✔ Task #{task_id} updated successfully!")

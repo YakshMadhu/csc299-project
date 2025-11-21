@@ -10,6 +10,17 @@
       "due_date": "11/20/2025",
       "created_at": "2025-11-20T18:24:27",
       "completed_at": null
+    },
+    {
+      "id": 2,
+      "title": "Sketching anime characters",
+      "description": "Maybe a better option would be one punch man",
+      "priority": "low",
+      "status": "todo",
+      "category": "time pass",
+      "due_date": "11-21-2025",
+      "created_at": "2025-11-20T20:15:05",
+      "completed_at": null
     }
   ]
 }

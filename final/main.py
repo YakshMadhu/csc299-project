@@ -131,6 +131,20 @@ def handle_command(line: str) -> bool:
             return True
         task_manager.delete_task(task_id)
         return True
+    
+    if cmd == "edit-task":
+        if not args:
+            print("Usage: edit-task <id>")
+            return True
+        try:
+            tid = int(args[0])
+        except ValueError:
+            print("Task id must be an integer.")
+            return True
+
+        task_manager.edit_task_interactive(tid)
+        return True
+
 
     if cmd == "search-tasks":
         if not args:
