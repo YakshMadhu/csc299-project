@@ -29,6 +29,7 @@ Commands:
   search-notes <query>        - search title/content/tags
   filter-notes tag <name>     - list notes that contain a specific tag
   delete-note <id>            - delete a note (with confirmation)
+  edit-note <id>              - edit a note
 
 
 
@@ -38,7 +39,8 @@ Commands:
   complete-task <id>          - mark a task as done
   start-task <id>             - mark a task as in-progress
   delete-task <id>            - delete a task
-  search-tasks <query>        - search tasks
+  search-tasks <query>        - search tasks by title/description  
+  edit-task <id>              - edit a task
 
   # AI helpers
   ai-summarize-note <id>      - summarize a note as a short tip
@@ -93,11 +95,9 @@ def handle_command(line: str) -> bool:
             return True
         try:
             nid = int(args[0])
+            pkms.edit_note(nid)
         except ValueError:
-            print("Note id must be an integer.")
-            return True
-
-        pkms.edit_note_interactive(nid)
+            print("Invalid note ID.")
         return True
 
     if cmd == "search-notes":
@@ -187,13 +187,10 @@ def handle_command(line: str) -> bool:
             return True
         try:
             tid = int(args[0])
+            task_manager.edit_task(tid)
         except ValueError:
-            print("Task id must be an integer.")
-            return True
-
-        task_manager.edit_task_interactive(tid)
+            print("Invalid task ID.")
         return True
-
 
     if cmd == "search-tasks":
         if not args:

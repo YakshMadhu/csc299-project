@@ -177,3 +177,37 @@ def delete_note_interactive(note_id: int) -> None:
     save_notes(notes)
 
     print(f"Note #{note_id} deleted successfully.")
+
+def edit_note(note_id: int) -> None:
+    notes = load_notes()
+    from .models import now_iso
+    found = False
+
+    for n in notes:
+        if n.id == note_id:
+            found = True
+            print("Editing Note...")
+            print(f"Current title: {n.title}")
+            new_title = input("New title (leave empty to keep): ").strip()
+            if new_title:
+                n.title = new_title
+
+            print(f"Current content:\n{n.content}")
+            new_content = input("New content (leave empty to keep): ").strip()
+            if new_content:
+                n.content = new_content
+
+            print(f"Current tags: {', '.join(n.tags)}")
+            new_tags = input("New comma-separated tags (leave empty to keep): ").strip()
+            if new_tags:
+                n.tags = [t.strip() for t in new_tags.split(",") if t.strip()]
+
+            n.updated_at = now_iso()
+            break
+
+    if not found:
+        print(f"No note found with id {note_id}.")
+        return
+
+    save_notes(notes)
+    print(f"Note #{note_id} updated successfully.")

@@ -119,3 +119,45 @@ def search_tasks(query: str) -> None:
     for t in matches:
         cat = t.category or "-"
         print(f"- [{t.id}] ({t.status}) [{cat}] {t.title}")
+
+def edit_task(task_id: int) -> None:
+    tasks = load_tasks()
+    from .models import now_iso
+    found = False
+
+    for t in tasks:
+        if t.id == task_id:
+            found = True
+            print("Editing Task...")
+
+            new_title = input(f"Title [{t.title}]: ").strip()
+            if new_title:
+                t.title = new_title
+
+            new_desc = input(f"Description [{t.description}]: ").strip()
+            if new_desc:
+                t.description = new_desc
+
+            new_priority = input(f"Priority (low/medium/high) [{t.priority}]: ").strip().lower()
+            if new_priority in ("low", "medium", "high"):
+                t.priority = new_priority
+
+            new_category = input(f"Category [{t.category}]: ").strip()
+            if new_category:
+                t.category = new_category
+
+            new_due = input(f"Due date (YYYY-MM-DD) [{t.due_date}]: ").strip()
+            if new_due:
+                t.due_date = new_due
+
+            t.updated_at = now_iso()
+
+            break
+
+    if not found:
+        print(f"No task found with id {task_id}.")
+        return
+
+    save_tasks(tasks)
+    print(f"Task #{task_id} edited successfully.")
+
