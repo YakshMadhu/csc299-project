@@ -6,6 +6,7 @@ from .models import Task
 from .storage import load_tasks, save_tasks, next_task_id
 
 
+
 def add_task_interactive() -> Task:
     tasks = load_tasks()
     tid = next_task_id(tasks)
@@ -13,9 +14,24 @@ def add_task_interactive() -> Task:
     print(">>> Creating a new task")
     title = input("Title: ").strip()
     description = input("Description: ").strip()
-    priority = input("Priority [low/medium/high] (default: medium): ").strip() or "medium"
-    category = input("Category (e.g., gesture, project, study) [optional]: ").strip() or None
-    due_date = input("Due date (YYYY-MM-DD) [optional]: ").strip() or None
+
+    # --- Call AI for suggestions ---
+    from .ai_agents import analyze_task_ai
+    try:
+        suggestions = analyze_task_ai(title, description)
+        print("\nAI Suggestions:")
+        print(f"- Recommended priority: {suggestions.get('priority')}")
+        print(f"- Category: {suggestions.get('category')}")
+        print(f"- Suggested due date: {suggestions.get('due_date')}")
+        print(f"- Tip: {suggestions.get('tip')}\n")
+    except Exception as e:
+        print(f"(AI unavailable: {e})")
+        suggestions = {}
+
+    # Use AI recommendations as defaults
+    priority = suggestions.get("priority") or "medium"
+    category = suggestions.get("category")
+    due_date = suggestions.get("due_date")
 
     task = Task.create(
         task_id=tid,
@@ -25,10 +41,11 @@ def add_task_interactive() -> Task:
         category=category,
         due_date=due_date,
     )
+
     tasks.append(task)
     save_tasks(tasks)
-
     print(f"Saved task #{task.id}")
+
     return task
 
 

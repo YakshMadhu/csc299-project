@@ -1,52 +1,42 @@
 # final/ai_agents.py
 from __future__ import annotations
 from typing import List
-
-import openai  # pip install openai
+from openai import OpenAI   # NEW SDK
 
 from .config import OPENAI_API_KEY, OPENAI_MODEL
 from .models import Note, Task
 from .storage import load_notes, load_tasks
 
-
-def _ensure_client() -> None:
-    if not OPENAI_API_KEY:
-        raise RuntimeError(
-            "OPENAI_API_KEY is not set. Set it in your environment before using AI commands."
-        )
-    openai.api_key = OPENAI_API_KEY
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 
 def summarize_note_for_artist(note: Note) -> str:
     """
     Use the model to summarize a note into a short, actionable art tip.
     """
-    _ensure_client()
-
     system_prompt = (
         "You are an art mentor helping someone improve. "
-        "Given a note from their personal knowledge system, "
-        "summarize it as a short, practical tip (1–3 sentences)."
+        "Summarize the following note into a short practical tip (1–3 sentences)."
     )
+
     user_prompt = f"Title: {note.title}\nContent:\n{note.content}"
 
-    resp = openai.ChatCompletion.create(
+    resp = client.chat.completions.create(
         model=OPENAI_MODEL,
         messages=[
             {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt},
+            {"role": "user", "content": user_prompt}
         ],
-        temperature=0.4,
+        temperature=0.4
     )
-    return resp.choices[0].message["content"].strip()
+
+    return resp.choices[0].message.content.strip()
 
 
 def suggest_practice_routine(user_input: str) -> str:
     """
     Suggest a practice routine based on user struggles + recent notes/tasks.
     """
-    _ensure_client()
-
     notes: List[Note] = load_notes()
     tasks: List[Task] = load_tasks()
 
@@ -62,23 +52,60 @@ def suggest_practice_routine(user_input: str) -> str:
 
     system_prompt = (
         "You are an experienced drawing teacher. "
-        "Given the student's struggles and their recent notes and tasks, "
-        "create a short numbered practice plan for today or the next few days. "
-        "Each item should be a concrete exercise (e.g., '10 min gesture warmup')."
+        "Given the student's struggles and their recent notes/tasks, "
+        "create a short numbered practice plan (3–7 steps)."
     )
 
     user_prompt = (
-        f"Student struggles/goals:\n{user_input}\n\n"
+        f"Struggles/goals:\n{user_input}\n\n"
         f"Recent notes:\n{notes_summary}\n\n"
         f"Recent tasks:\n{tasks_summary}"
     )
 
-    resp = openai.ChatCompletion.create(
+    resp = client.chat.completions.create(
         model=OPENAI_MODEL,
         messages=[
             {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt},
+            {"role": "user", "content": user_prompt}
         ],
-        temperature=0.6,
+        temperature=0.6
     )
-    return resp.choices[0].message["content"].strip()
+
+    return resp.choices[0].message.content.strip()
+
+
+def analyze_task_ai(title: str, description: str) -> dict:
+    """
+    AI reads a task title + description and returns JSON:
+    {priority, category, due_date, tip}
+    """
+    system_prompt = (
+        "Return a JSON object with fields:\n"
+        "priority (low/medium/high),\n"
+        "category,\n"
+        "due_date (YYYY-MM-DD),\n"
+        "tip (1 sentence)."
+    )
+
+    user_prompt = f"Title: {title}\nDescription: {description}"
+
+    resp = client.chat.completions.create(
+        model=OPENAI_MODEL,
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt}
+        ],
+        temperature=0.4
+    )
+
+    import json
+    try:
+        parsed = json.loads(resp.choices[0].message.content)
+        return parsed
+    except Exception:
+        return {
+            "priority": "medium",
+            "category": None,
+            "due_date": None,
+            "tip": "(AI response could not be parsed.)"
+        }
