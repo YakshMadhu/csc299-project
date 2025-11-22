@@ -5,4 +5,4 @@ import os
 #   macOS/Linux:  export OPENAI_API_KEY="sk-..."
 #   Windows PS:   $env:OPENAI_API_KEY="sk-..."
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
-OPENAI_MODEL = "gpt-3.5-turbo"
+OPENAI_MODEL = "gpt-4o"

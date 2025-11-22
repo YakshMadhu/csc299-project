@@ -79,12 +79,16 @@ def analyze_task_ai(title: str, description: str) -> dict:
     AI reads a task title + description and returns JSON:
     {priority, category, due_date, tip}
     """
+
     system_prompt = (
-        "Return a JSON object with fields:\n"
-        "priority (low/medium/high),\n"
-        "category,\n"
-        "due_date (YYYY-MM-DD),\n"
-        "tip (1 sentence)."
+        "Return ONLY valid JSON. Do not include any explanation, comments, or text before or after.\n"
+        "Format must be exactly:\n"
+        "{\n"
+        "  \"priority\": \"low|medium|high\",\n"
+        "  \"category\": \"string or null\",\n"
+        "  \"due_date\": \"YYYY-MM-DD or null\",\n"
+        "  \"tip\": \"string\"\n"
+        "}"
     )
 
     user_prompt = f"Title: {title}\nDescription: {description}"
@@ -95,14 +99,22 @@ def analyze_task_ai(title: str, description: str) -> dict:
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt}
         ],
-        temperature=0.4
+        temperature=0.2
     )
 
     import json
+    raw = resp.choices[0].message.content.strip()
+
     try:
-        parsed = json.loads(resp.choices[0].message.content)
+        # Some models wrap JSON in ```json ... ```
+        if raw.startswith("```"):
+            raw = raw.strip("`").replace("json", "").strip()
+
+        parsed = json.loads(raw)
         return parsed
-    except Exception:
+
+    except Exception as e:
+        print("JSON parse error:", e, "\nRaw AI output:", raw)
         return {
             "priority": "medium",
             "category": None,

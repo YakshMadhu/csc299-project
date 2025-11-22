@@ -53,12 +53,12 @@
       "title": "Buying art supplies",
       "description": "Go to micheals",
       "priority": "medium",
-      "status": "todo",
+      "status": "in-progress",
       "category": null,
       "due_date": null,
       "created_at": "2025-11-21T15:46:26",
       "completed_at": null,
-      "updated_at": "2025-11-21T15:46:26"
+      "updated_at": "2025-11-22T12:30:28"
     },
     {
       "id": 6,
@@ -155,6 +155,78 @@
       "created_at": "2025-11-22T11:24:39",
       "completed_at": null,
       "updated_at": "2025-11-22T11:24:39"
+    },
+    {
+      "id": 14,
+      "title": "Fixing my broken paint brush",
+      "description": "I will use tape",
+      "priority": "medium",
+      "status": "todo",
+      "category": null,
+      "due_date": null,
+      "created_at": "2025-11-22T12:08:27",
+      "completed_at": null,
+      "updated_at": "2025-11-22T12:08:27"
+    },
+    {
+      "id": 15,
+      "title": "Working on canvas large",
+      "description": "using artsitloft canvas",
+      "priority": "medium",
+      "status": "todo",
+      "category": null,
+      "due_date": null,
+      "created_at": "2025-11-22T12:09:27",
+      "completed_at": null,
+      "updated_at": "2025-11-22T12:09:27"
+    },
+    {
+      "id": 16,
+      "title": "123",
+      "description": "456",
+      "priority": "medium",
+      "status": "todo",
+      "category": null,
+      "due_date": null,
+      "created_at": "2025-11-22T12:12:07",
+      "completed_at": null,
+      "updated_at": "2025-11-22T12:12:07"
+    },
+    {
+      "id": 17,
+      "title": "type",
+      "description": "whateveer u want",
+      "priority": "medium",
+      "status": "todo",
+      "category": null,
+      "due_date": null,
+      "created_at": "2025-11-22T12:15:49",
+      "completed_at": null,
+      "updated_at": "2025-11-22T12:15:49"
+    },
+    {
+      "id": 18,
+      "title": "Making some cermaics",
+      "description": "Using tools",
+      "priority": "medium",
+      "status": "todo",
+      "category": null,
+      "due_date": null,
+      "created_at": "2025-11-22T12:20:15",
+      "completed_at": null,
+      "updated_at": "2025-11-22T12:20:15"
+    },
+    {
+      "id": 20,
+      "title": "making fingers",
+      "description": "making sure it is anatomically correct",
+      "priority": "medium",
+      "status": "todo",
+      "category": "art",
+      "due_date": null,
+      "created_at": "2025-11-22T12:26:34",
+      "completed_at": null,
+      "updated_at": "2025-11-22T12:26:34"
     }
   ]
 }
