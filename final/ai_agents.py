@@ -300,7 +300,6 @@ Remember: bullet lines only.
 
     return resp.choices[0].message.content.strip()
 
-# ------------------------------------------------------
 # FEATURE 3 — AI SKILL ANALYSIS BASED ON NOTES ONLY
 # ------------------------------------------------------
 def analyze_skill_from_note(note: Note) -> str:

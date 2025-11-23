@@ -47,7 +47,7 @@ Commands:
   ai-generate-practice <id>   - generate practice drills from a task
   ai-skill-analysis <id>      - analyze a note and get strengths, weaknesses, plan
 
-          
+
   help                        - show this help
   quit / exit                 - exit the program
 """)
