@@ -47,6 +47,7 @@ Commands:
   ai-generate-practice <id>   - generate practice drills from a task
   ai-skill-analysis <id>      - analyze a note and get strengths, weaknesses, plan
   ai-mentor <question>        - ask the AI art mentor a question
+  ai-critique <description>   - get AI critique on your artwork description (make sure it's detailed! for best results, it's independent of your notes/tasks)
 
 
   help                        - show this help
@@ -306,6 +307,24 @@ def handle_command(line: str) -> bool:
 
         return True
 
+    if cmd == "ai-critique":
+        if not args:
+            print("Usage: ai-critique <your description>")
+            return True
+
+        description = " ".join(args)
+
+        from .ai_agents import critique_artwork
+
+        try:
+            critique = critique_artwork(description)
+            print("\nArt Critique:\n-------------------")
+            print(critique)
+            print("-------------------")
+        except Exception as e:
+            print(f"Error calling AI: {e}")
+
+        return True
 
 
 

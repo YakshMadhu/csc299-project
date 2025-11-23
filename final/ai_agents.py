@@ -544,3 +544,62 @@ Respond as MENTOR A.
     )
 
     return resp.choices[0].message.content.strip()
+
+# ------------------------------------------------------
+# FEATURE 5 — ARTWORK CRITIQUE (Independent Feature)
+# ------------------------------------------------------
+
+def critique_artwork(description: str) -> str:
+    """
+    Produce a museum-level critique of the user's artwork description.
+    No teaching, no instructions, no steps.
+    Pure interpretive analysis.
+    """
+
+    system_prompt = """
+You are ART CRITIC X — a world-class museum-level art critic and visual analyst.
+
+YOUR JOB:
+Provide a highly professional critique of the artwork based ONLY on the user’s description. 
+You are NOT a teacher here — you are an art critic evaluating a finished piece.
+
+STYLE REQUIREMENTS (STRICT):
+- No poetic storytelling.
+- No history lessons.
+- No fictional narratives.
+- No step-by-step instructions.
+- No “practice this next time.”
+- No study drills or assignments.
+- No vague praise.
+
+YOU MUST:
+1. Identify the strongest visual decisions in the artwork.
+2. Identify the weakest or least resolved decisions.
+3. Explain WHY each strength or weakness affects the image.
+4. Evaluate composition, clarity, shape design, value design, edges, proportions, rhythm, and focal hierarchy whenever applicable.
+5. Speak as a knowledgeable, high-level museum critic analyzing a finished piece.
+6. Keep the critique concise but rich — NOT flowery and not enormous.
+
+FORMAT (STRICT):
+Write 2–4 paragraphs of tight, analytical critique.
+No bullet points. No headings. No lists.
+Do NOT include anything else.
+"""
+
+    user_prompt = f"""
+Artwork Description Provided by Artist:
+\"\"\"{description}\"\"\"
+
+Write a professional fine-art critique.
+"""
+
+    resp = client.chat.completions.create(
+        model=OPENAI_MODEL,
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
+        ],
+        temperature=0.8,
+    )
+
+    return resp.choices[0].message.content.strip()
