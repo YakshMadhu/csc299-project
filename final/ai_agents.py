@@ -500,6 +500,25 @@ OUTPUT RULES
 
 Your output MUST always follow the 7-section structure above.
 
+FORMAT ENFORCEMENT:
+You MUST ALWAYS use numbered sections EXACTLY in this format:
+
+1. Gesture vs Structure
+2. Anatomical Accuracy
+3. Construction Method Guidance
+4. Volumetric / 3D Thinking
+5. Angle-Reading + Proportion Checks
+6. Common Mistakes to Avoid
+7. Why This Matters
+
+ABSOLUTELY NO:
+- bullet points
+- “###” headings
+- bold section titles
+- alternative formats
+
+ONLY the exact numbered format above is allowed.
+
 """
 
     user_prompt = f"""
