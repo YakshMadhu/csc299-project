@@ -145,3 +145,15 @@
 [2025-11-22T21:40:36] ai-summarize-note 2
 [2025-11-22T21:41:06] git final .
 [2025-11-22T21:41:08] exit
+[2025-11-23T09:04:04] add-task
+[2025-11-23T09:05:13] $env:openai_api_key="sk-proj-y62pflt9mavhyrutuee0ftvzgt6gbxy0b7dobcezarbqygq5om_cmt1ung-n9kkmqn2g9a2tsot3blbkfjaf9xkx5gj8p4hao0djzbgdrnpbz6dq5mvo7o_7fxped6bldnkai7cghscf1j5pzkw_u_haynwa"
+[2025-11-23T09:05:15] exit
+[2025-11-23T09:05:28] add-task 
+[2025-11-23T09:07:00] add-task
+[2025-11-23T09:12:22] ai-generate-practice 12
+[2025-11-23T09:12:34] view-tasks
+[2025-11-23T09:12:41] list-tasks
+[2025-11-23T09:13:01] ai-generate-practice 83
+[2025-11-23T09:13:27] ai-generate-practice 83
+[2025-11-23T09:14:09] ai-generate-practice 44
+[2025-11-23T09:16:49] exit

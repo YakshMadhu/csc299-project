@@ -161,3 +161,46 @@ Return ONLY the JSON object. No commentary.
             )
         }
 
+def generate_practices_from_task(task: Task) -> str:
+    today = datetime.today().strftime("%Y-%m-%d")
+
+    system_prompt = f"""
+You are a world-class atelier art teacher (Vilppu, Proko, Steve Huston).
+Your job is to take the student's TASK and generate 5–7 highly advanced,
+professional practice drills they should perform today.
+
+RULES:
+- Use ONLY the task’s title and description.
+- Each drill must be ONE sentence.
+- Each drill MUST include:
+  • a number of drawings (5, 8, 10, etc.)
+  • a time limit OR specific technical focus
+  • one advanced concept (gesture, structure, landmarks, planes, rhythm, weight, anatomy)
+- Drills must feel like real drawing class assignments.
+- MUST avoid repetition.
+- MUST be immediately useful.
+
+FORMAT:
+- Return ONLY bullet lines starting with "- ".
+- No intro, no explanation, no commentary.
+"""
+
+    user_prompt = f"""
+TASK:
+Title: {task.title}
+Description: {task.description}
+
+Generate 5–7 professional-level practice drills.
+Remember: bullet lines only.
+"""
+
+    resp = client.chat.completions.create(
+        model=OPENAI_MODEL,
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
+        ],
+        temperature=0.6,
+    )
+
+    return resp.choices[0].message.content.strip()

@@ -224,7 +224,37 @@ def handle_command(line: str) -> bool:
             print(f"Error calling AI: {e}")
         return True
     
-    
+    if cmd == "ai-generate-practice":
+        if not args:
+            print("Usage: ai-generate-practice <task_id>")
+            return True
+
+        try:
+            task_id = int(args[0])
+        except ValueError:
+            print("Task id must be an integer.")
+            return True
+
+        from .task_manager import find_task_by_id
+        task = find_task_by_id(task_id)
+
+        if not task:
+            print(f"No task #{task_id} found.")
+            return True
+
+        from .ai_agents import generate_practices_from_task
+
+        try:
+            practices = generate_practices_from_task(task)
+            print("\nPractice Drills:")
+            print("-----------------------------------")
+            print(practices)
+            print("-----------------------------------")
+        except Exception as e:
+            print(f"Error calling AI: {e}")
+
+        return True
+
 
     # ----- Unknown -----
     print(f"Unknown command: {cmd}. Type 'help' to see commands.")
