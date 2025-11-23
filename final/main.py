@@ -44,7 +44,10 @@ Commands:
 
   # AI helpers: Make things easier with AI
   ai-summarize-note <id>      - summarize a note as a short tip
+  ai-generate-practice <id>   - generate practice drills from a task
+  ai-skill-analysis <id>      - analyze a note and get strengths, weaknesses, plan
 
+          
   help                        - show this help
   quit / exit                 - exit the program
 """)
@@ -254,6 +257,34 @@ def handle_command(line: str) -> bool:
             print(f"Error calling AI: {e}")
 
         return True
+    
+    if cmd == "ai-skill-analysis":
+        if not args:
+            print("Usage: ai-skill-analysis <note_id>")
+            return True
+
+        try:
+            nid = int(args[0])
+        except:
+            print("Note ID must be an integer.")
+            return True
+
+        note = find_note_by_id(nid)
+        if not note:
+            print(f"No note #{nid} found.")
+            return True
+
+        from .ai_agents import analyze_skill_from_note
+        
+        try:
+            report = analyze_skill_from_note(note)
+            print("\nSkill Analysis Report:\n------------------------")
+            print(report)
+            print("------------------------")
+        except Exception as e:
+            print(f"Error calling AI: {e}")
+        return True
+
 
 
     # ----- Unknown -----

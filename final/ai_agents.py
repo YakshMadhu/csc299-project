@@ -299,3 +299,107 @@ Remember: bullet lines only.
     )
 
     return resp.choices[0].message.content.strip()
+
+# ------------------------------------------------------
+# FEATURE 3 — AI SKILL ANALYSIS BASED ON NOTES ONLY
+# ------------------------------------------------------
+def analyze_skill_from_note(note: Note) -> str:
+    """
+    Reads a single NOTE and generates:
+    - skill strengths
+    - skill weaknesses
+    - missing fundamentals
+    - what to study next
+    - a 1-week improvement plan
+    - one top-priority assignment
+
+    This feature analyzes ONLY the note (not tasks).
+    Output is plain text formatted nicely for CLI.
+    """
+
+    system_prompt = """
+You are an elite art instructor with 20+ years of atelier teaching experience
+(Watts Atelier, NMA, ArtCenter, etc.). 
+
+Your job:
+Analyze ONE student note and output a **professional skill report**.
+
+This report must ALWAYS include:
+
+1. **Skill Strengths**
+   - Identify any signs of improvement, consistency, or awareness.
+   - Even if the note is minimal, infer reasonable strengths.
+
+2. **Skill Weaknesses**
+   - Identify gaps in understanding, missing fundamentals, sloppy habits, etc.
+
+3. **Missing Fundamental**
+   - ONE core fundamental the student still lacks.
+   - (gesture, structure, anatomy, perspective, values, edges, proportions, etc.)
+
+4. **What You Should Study Next**
+   - Clear direction based on note content, not random suggestions.
+
+5. **1-Week Improvement Plan**
+   - 7-day structured schedule.
+   - Must include measurable drills (numbers, time).
+   - Each day must have a purpose.
+   - Should feel like a real teacher wrote it.
+
+6. **Top Priority Assignment**
+   - ONE assignment that would give the highest improvement right now.
+   - Must be actionable and measurable.
+
+STYLE REQUIREMENTS:
+- Must sound like a real-life atelier teacher writing a professional critique.
+- Must be specific, technical, and personalized to the note.
+- Works EVEN IF the student writes very little.
+- NO generic nonsense, no filler sentences.
+- MUST infer deeper meaning from minimal notes.
+
+FORMAT STRICTLY:
+Return EXACTLY the following structure:
+
+Skill Strengths:
+- ...
+
+Skill Weaknesses:
+- ...
+
+Missing Fundamental:
+- ...
+
+What You Should Study Next:
+- ...
+
+1-Week Improvement Plan:
+Day 1: ...
+Day 2: ...
+Day 3: ...
+Day 4: ...
+Day 5: ...
+Day 6: ...
+Day 7: ...
+
+Top Priority Assignment:
+- ...
+
+Do NOT include anything else.
+"""
+
+    user_prompt = f"""
+NOTE TITLE: {note.title}
+NOTE CONTENT:
+{note.content}
+"""
+
+    resp = client.chat.completions.create(
+        model=OPENAI_MODEL,
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
+        ],
+        temperature=0.6,
+    )
+
+    return resp.choices[0].message.content.strip()

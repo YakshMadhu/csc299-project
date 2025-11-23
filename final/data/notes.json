@@ -70,6 +70,29 @@
       ],
       "created_at": "2025-11-22T21:13:54",
       "updated_at": "2025-11-22T21:13:54"
+    },
+    {
+      "id": 9,
+      "title": "Toe",
+      "content": "I am really happy with how my toe practice is going I am making good progress",
+      "tags": [
+        "anatomy"
+      ],
+      "created_at": "2025-11-23T09:59:24",
+      "updated_at": "2025-11-23T09:59:24"
+    },
+    {
+      "id": 10,
+      "title": "Improving Gesture–Structure Integration",
+      "content": "I feel like my figure drawings are improving but still look stiff.\nMy proportions get thrown off when the pose is dynamic, especially in the torso and legs.\nI sometimes lose the gesture when I focus on construction, and when I try to add structure, the flow disappears.\nI want to get better at combining gesture flow with accurate structure, especially in twisting or foreshortened poses.",
+      "tags": [
+        "gesture",
+        "structure",
+        "figure-drawing",
+        "improvement"
+      ],
+      "created_at": "2025-11-23T10:09:02",
+      "updated_at": "2025-11-23T10:09:02"
     }
   ]
 }
