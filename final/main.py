@@ -46,6 +46,7 @@ Commands:
   ai-summarize-note <id>      - summarize a note as a short tip
   ai-generate-practice <id>   - generate practice drills from a task
   ai-skill-analysis <id>      - analyze a note and get strengths, weaknesses, plan
+  ai-mentor <question>        - ask the AI art mentor a question
 
 
   help                        - show this help
@@ -284,6 +285,27 @@ def handle_command(line: str) -> bool:
         except Exception as e:
             print(f"Error calling AI: {e}")
         return True
+    
+        # ----- AI MENTOR -----
+    if cmd == "ai-mentor":
+        if not args:
+            print("Enter a question after 'ai-mentor', e.g., ai-mentor how do I improve gesture?")
+            return True
+
+        question = " ".join(args)
+
+        from .ai_agents import mentor_chat
+
+        try:
+            answer = mentor_chat(question)
+            print("\nMentor Response:\n-------------------")
+            print(answer)
+            print("\n-------------------")
+        except Exception as e:
+            print(f"Error calling AI: {e}")
+
+        return True
+
 
 
 

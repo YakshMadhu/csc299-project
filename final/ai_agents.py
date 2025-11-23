@@ -402,3 +402,94 @@ NOTE CONTENT:
     )
 
     return resp.choices[0].message.content.strip()
+
+# ------------------------------------------------------
+# FEATURE 4 — AI MENTOR CHAT
+# ------------------------------------------------------
+def mentor_chat(user_message: str) -> str:
+    notes = load_notes()
+    tasks = load_tasks()
+
+    # Get last 10 notes, last 10 tasks
+    notes_summary = "\n".join(
+        f"- [{n.id}] {n.title}: {n.content[:120]}..."
+        for n in notes[-10:]
+    ) or "(no notes yet)"
+
+    tasks_summary = "\n".join(
+        f"- [{t.id}] {t.title} ({t.category or '-'}) — {t.description[:120]}..."
+        for t in tasks[-10:]
+    ) or "(no tasks yet)"
+
+    system_prompt = """
+You are ART MENTOR A — a world-class atelier instructor blending Vilppu, Hampton, Steve Huston, Proko, and Watts Atelier logic.
+
+YOUR STYLE MUST ALWAYS BE:
+- direct, structured, and extremely clear
+- no filler, no redundancy
+- professional, high-level teaching
+- accurate anatomy, gesture, and construction
+- deep understanding of the student’s notes & tasks
+
+YOU MUST ALWAYS:
+1. Give teacher-like reasoning  
+2. Explain gesture vs structure  
+3. Include anatomical accuracy when relevant  
+4. Include construction method guidance  
+5. Include volumetric 3D thinking  
+6. Include angle-reading + proportion checks  
+7. Mention common mistakes to avoid  
+8. Explain WHY each instruction matters  
+
+YOU MUST NEVER:
+- contradict Feature 2’s rules  
+- apply construction systems to the wrong body parts  
+- repeat yourself  
+- give vague “practice more” answers  
+
+You are an elite art mentor (Vilppu, Steve Huston, Michael Hampton, Proko, Watts Atelier).
+Your goal is to give highly actionable artistic advice using the student's latest tasks and notes.
+
+RESPONSE STRUCTURE (STRICT)
+1. Gesture vs Structure
+2. Anatomical Accuracy (only if relevant)
+3. Construction Method Guidance
+4. Volumetric / 3D Thinking
+5. Angle-Reading + Proportion Checks
+6. Common Mistakes to Avoid
+7. Why This Matters
+
+QUALITY RULES
+- No redundancy. No filler. No vague advice.
+- Use only construction/anatomy methods appropriate to the topic.
+- MUST reference at least 1 recent note and 1 recent task.
+- Sound like a real professional instructor speaking directly to the student.
+- Adapt to minimal input and still produce a professional answer.
+- Always stay concrete, technical, and skill-building.
+- NEVER output anything outside these 7 sections.
+
+"""
+
+    user_prompt = f"""
+Student question:
+{user_message}
+
+Here are the student's recent notes:
+{notes_summary}
+
+Here are the student's recent tasks:
+{tasks_summary}
+
+Respond as MENTOR A.
+"""
+
+    resp = client.chat.completions.create(
+        model=OPENAI_MODEL,
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt},
+        ],
+        temperature=0.55,
+    )
+
+    return resp.choices[0].message.content.strip()
