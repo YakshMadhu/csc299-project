@@ -22,7 +22,7 @@ def print_help() -> None:
     print("""
 Commands:
 
-  # Notes (PKMS)
+  # Notes (PKMS): Your Brain, Dump theory, observations, class notes, anatomy breakdown, etc.
   add-note                    - create a new note
   list-notes                  - list all notes
   view-note <id>              - show one note
@@ -33,7 +33,7 @@ Commands:
 
 
 
-  # Tasks
+  # Tasks: Your drawing assignments, practice routines, challenges, etc.
   add-task                    - create a new task
   list-tasks [status]         - list tasks (optionally filter by todo/in-progress/done)
   complete-task <id>          - mark a task as done
@@ -42,9 +42,8 @@ Commands:
   search-tasks <query>        - search tasks by title/description  
   edit-task <id>              - edit a task
 
-  # AI helpers
+  # AI helpers: Make things easier with AI
   ai-summarize-note <id>      - summarize a note as a short tip
-  ai-suggest-practice         - suggest a practice routine
 
   help                        - show this help
   quit / exit                 - exit the program
@@ -224,25 +223,8 @@ def handle_command(line: str) -> bool:
         except Exception as e:
             print(f"Error calling AI: {e}")
         return True
-
-    if cmd == "ai-suggest-practice":
-        print("Describe your current struggles or goals (finish with empty line):")
-        lines = []
-        while True:
-            line = input()
-            if not line.strip():
-                break
-            lines.append(line)
-        user_input = "\n".join(lines) if lines else "(no description)"
-
-        try:
-            plan = suggest_practice_routine(user_input)
-            print("\nSuggested practice routine:\n---------------------------")
-            print(plan)
-            print("---------------------------")
-        except Exception as e:
-            print(f"Error calling AI: {e}")
-        return True
+    
+    
 
     # ----- Unknown -----
     print(f"Unknown command: {cmd}. Type 'help' to see commands.")

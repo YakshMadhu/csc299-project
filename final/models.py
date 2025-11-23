@@ -58,6 +58,7 @@ class Task:
     created_at: str
     completed_at: Optional[str]
     updated_at: str = ""
+    tip: Optional[str] | None = None  # Optional field for AI-generated tip
 
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)
@@ -102,14 +103,14 @@ class Task:
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> "Task":
         return cls(
-            id=data["id"],
-            title=data["title"],
-            description=data.get("description", ""),
-            priority=data.get("priority", "medium"),
-            status=data.get("status", "todo"),
-            category=data.get("category"),
-            due_date=data.get("due_date"),
-            created_at=data.get("created_at", now_iso()),
-            completed_at=data.get("completed_at"),
-            updated_at=data.get("updated_at", now_iso()),
-        )
+        id=data["id"],
+        title=data["title"],
+        description=data.get("description", ""),
+        priority=data.get("priority", "medium"),
+        status=data.get("status", "todo"),
+        category=data.get("category"),
+        due_date=data.get("due_date"),
+        created_at=data.get("created_at", now_iso()),
+        completed_at=data.get("completed_at"),
+        updated_at=data.get("updated_at", now_iso()),
+    )

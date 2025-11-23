@@ -10,7 +10,8 @@
       "due_date": null,
       "created_at": "2025-11-22T11:00:35",
       "completed_at": null,
-      "updated_at": "2025-11-22T11:00:35"
+      "updated_at": "2025-11-22T11:00:35",
+      "tip": null
     },
     {
       "id": 10,
@@ -22,7 +23,8 @@
       "due_date": null,
       "created_at": "2025-11-22T11:02:32",
       "completed_at": null,
-      "updated_at": "2025-11-22T11:02:32"
+      "updated_at": "2025-11-22T11:02:32",
+      "tip": null
     },
     {
       "id": 11,
@@ -34,7 +36,8 @@
       "due_date": null,
       "created_at": "2025-11-22T11:04:38",
       "completed_at": null,
-      "updated_at": "2025-11-22T11:04:38"
+      "updated_at": "2025-11-22T11:04:38",
+      "tip": null
     },
     {
       "id": 12,
@@ -46,7 +49,8 @@
       "due_date": null,
       "created_at": "2025-11-22T11:05:18",
       "completed_at": null,
-      "updated_at": "2025-11-22T11:05:18"
+      "updated_at": "2025-11-22T11:05:18",
+      "tip": null
     },
     {
       "id": 13,
@@ -58,7 +62,8 @@
       "due_date": "2023-10-31",
       "created_at": "2025-11-22T11:24:39",
       "completed_at": null,
-      "updated_at": "2025-11-22T11:24:39"
+      "updated_at": "2025-11-22T11:24:39",
+      "tip": null
     },
     {
       "id": 14,
@@ -70,7 +75,8 @@
       "due_date": null,
       "created_at": "2025-11-22T12:08:27",
       "completed_at": null,
-      "updated_at": "2025-11-22T12:08:27"
+      "updated_at": "2025-11-22T12:08:27",
+      "tip": null
     },
     {
       "id": 15,
@@ -82,7 +88,8 @@
       "due_date": null,
       "created_at": "2025-11-22T12:09:27",
       "completed_at": null,
-      "updated_at": "2025-11-22T12:09:27"
+      "updated_at": "2025-11-22T12:09:27",
+      "tip": null
     },
     {
       "id": 16,
@@ -94,7 +101,8 @@
       "due_date": null,
       "created_at": "2025-11-22T12:12:07",
       "completed_at": null,
-      "updated_at": "2025-11-22T12:12:07"
+      "updated_at": "2025-11-22T12:12:07",
+      "tip": null
     },
     {
       "id": 17,
@@ -106,7 +114,8 @@
       "due_date": null,
       "created_at": "2025-11-22T12:15:49",
       "completed_at": null,
-      "updated_at": "2025-11-22T12:15:49"
+      "updated_at": "2025-11-22T12:15:49",
+      "tip": null
     },
     {
       "id": 18,
@@ -118,7 +127,8 @@
       "due_date": null,
       "created_at": "2025-11-22T12:20:15",
       "completed_at": null,
-      "updated_at": "2025-11-22T12:20:15"
+      "updated_at": "2025-11-22T12:20:15",
+      "tip": null
     },
     {
       "id": 20,
@@ -130,7 +140,8 @@
       "due_date": null,
       "created_at": "2025-11-22T12:26:34",
       "completed_at": null,
-      "updated_at": "2025-11-22T12:26:34"
+      "updated_at": "2025-11-22T12:26:34",
+      "tip": null
     },
     {
       "id": 21,
@@ -142,7 +153,8 @@
       "due_date": null,
       "created_at": "2025-11-22T13:33:57",
       "completed_at": null,
-      "updated_at": "2025-11-22T13:33:57"
+      "updated_at": "2025-11-22T13:33:57",
+      "tip": null
     },
     {
       "id": 22,
@@ -154,7 +166,8 @@
       "due_date": null,
       "created_at": "2025-11-22T13:34:44",
       "completed_at": null,
-      "updated_at": "2025-11-22T13:34:44"
+      "updated_at": "2025-11-22T13:34:44",
+      "tip": null
     },
     {
       "id": 23,
@@ -166,7 +179,8 @@
       "due_date": null,
       "created_at": "2025-11-22T13:37:32",
       "completed_at": null,
-      "updated_at": "2025-11-22T13:37:32"
+      "updated_at": "2025-11-22T13:37:32",
+      "tip": null
     },
     {
       "id": 24,
@@ -178,7 +192,8 @@
       "due_date": "2025-11-25",
       "created_at": "2025-11-22T13:43:23",
       "completed_at": null,
-      "updated_at": "2025-11-22T13:43:23"
+      "updated_at": "2025-11-22T13:43:23",
+      "tip": null
     },
     {
       "id": 25,
@@ -190,7 +205,8 @@
       "due_date": "2023-11-27",
       "created_at": "2025-11-22T13:55:23",
       "completed_at": null,
-      "updated_at": "2025-11-22T13:55:23"
+      "updated_at": "2025-11-22T13:55:23",
+      "tip": null
     },
     {
       "id": 26,
@@ -202,7 +218,8 @@
       "due_date": null,
       "created_at": "2025-11-22T13:57:26",
       "completed_at": null,
-      "updated_at": "2025-11-22T13:57:26"
+      "updated_at": "2025-11-22T13:57:26",
+      "tip": null
     },
     {
       "id": 27,
@@ -214,7 +231,8 @@
       "due_date": "2023-11-25",
       "created_at": "2025-11-22T14:09:21",
       "completed_at": null,
-      "updated_at": "2025-11-22T14:09:21"
+      "updated_at": "2025-11-22T14:09:21",
+      "tip": null
     },
     {
       "id": 28,
@@ -226,7 +244,8 @@
       "due_date": null,
       "created_at": "2025-11-22T14:09:57",
       "completed_at": null,
-      "updated_at": "2025-11-22T14:09:57"
+      "updated_at": "2025-11-22T14:09:57",
+      "tip": null
     },
     {
       "id": 29,
@@ -238,7 +257,8 @@
       "due_date": null,
       "created_at": "2025-11-22T14:10:26",
       "completed_at": null,
-      "updated_at": "2025-11-22T14:10:26"
+      "updated_at": "2025-11-22T14:10:26",
+      "tip": null
     },
     {
       "id": 30,
@@ -250,7 +270,8 @@
       "due_date": "2023-11-30",
       "created_at": "2025-11-22T14:11:30",
       "completed_at": null,
-      "updated_at": "2025-11-22T14:11:30"
+      "updated_at": "2025-11-22T14:11:30",
+      "tip": null
     },
     {
       "id": 31,
@@ -262,7 +283,8 @@
       "due_date": null,
       "created_at": "2025-11-22T16:11:55",
       "completed_at": null,
-      "updated_at": "2025-11-22T16:11:55"
+      "updated_at": "2025-11-22T16:11:55",
+      "tip": null
     },
     {
       "id": 32,
@@ -274,7 +296,8 @@
       "due_date": null,
       "created_at": "2025-11-22T16:12:55",
       "completed_at": null,
-      "updated_at": "2025-11-22T16:12:55"
+      "updated_at": "2025-11-22T16:12:55",
+      "tip": null
     },
     {
       "id": 33,
@@ -286,7 +309,8 @@
       "due_date": null,
       "created_at": "2025-11-22T16:32:07",
       "completed_at": null,
-      "updated_at": "2025-11-22T16:32:07"
+      "updated_at": "2025-11-22T16:32:07",
+      "tip": null
     },
     {
       "id": 34,
@@ -298,7 +322,8 @@
       "due_date": null,
       "created_at": "2025-11-22T16:39:21",
       "completed_at": null,
-      "updated_at": "2025-11-22T16:39:21"
+      "updated_at": "2025-11-22T16:39:21",
+      "tip": null
     },
     {
       "id": 35,
@@ -310,7 +335,8 @@
       "due_date": null,
       "created_at": "2025-11-22T16:46:10",
       "completed_at": null,
-      "updated_at": "2025-11-22T16:46:10"
+      "updated_at": "2025-11-22T16:46:10",
+      "tip": null
     },
     {
       "id": 36,
@@ -322,7 +348,8 @@
       "due_date": null,
       "created_at": "2025-11-22T16:46:39",
       "completed_at": null,
-      "updated_at": "2025-11-22T16:46:39"
+      "updated_at": "2025-11-22T16:46:39",
+      "tip": null
     },
     {
       "id": 37,
@@ -334,7 +361,8 @@
       "due_date": "2025-11-25",
       "created_at": "2025-11-22T16:51:16",
       "completed_at": null,
-      "updated_at": "2025-11-22T16:51:16"
+      "updated_at": "2025-11-22T16:51:16",
+      "tip": null
     },
     {
       "id": 38,
@@ -346,7 +374,8 @@
       "due_date": "2025-11-23",
       "created_at": "2025-11-22T16:52:09",
       "completed_at": null,
-      "updated_at": "2025-11-22T16:52:09"
+      "updated_at": "2025-11-22T16:52:09",
+      "tip": null
     },
     {
       "id": 39,
@@ -358,7 +387,8 @@
       "due_date": "2025-11-23",
       "created_at": "2025-11-22T17:03:25",
       "completed_at": null,
-      "updated_at": "2025-11-22T17:03:25"
+      "updated_at": "2025-11-22T17:03:25",
+      "tip": null
     },
     {
       "id": 40,
@@ -370,7 +400,593 @@
       "due_date": "2025-11-23",
       "created_at": "2025-11-22T17:11:57",
       "completed_at": null,
-      "updated_at": "2025-11-22T17:11:57"
+      "updated_at": "2025-11-22T17:11:57",
+      "tip": null
+    },
+    {
+      "id": 41,
+      "title": "Drawing nose",
+      "description": "I want to learn how to accurately use different tones to make the nose popout 3d and not just 2d",
+      "priority": "high",
+      "status": "todo",
+      "category": "Portrait Construction – Nose Rendering",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T17:21:31",
+      "completed_at": null,
+      "updated_at": "2025-11-22T17:21:31",
+      "tip": null
+    },
+    {
+      "id": 42,
+      "title": "sketching",
+      "description": "I want to learn how shading works",
+      "priority": "medium",
+      "status": "todo",
+      "category": "Shading Techniques",
+      "due_date": "2025-11-25",
+      "created_at": "2025-11-22T17:22:01",
+      "completed_at": null,
+      "updated_at": "2025-11-22T17:22:01",
+      "tip": null
+    },
+    {
+      "id": 43,
+      "title": "Eye socket",
+      "description": "Struggling with making proper eye socket and foreshorterning it so i will use refrence",
+      "priority": "high",
+      "status": "todo",
+      "category": "Anatomy – Eye Socket & Foreshortening",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T17:32:41",
+      "completed_at": null,
+      "updated_at": "2025-11-22T17:32:41",
+      "tip": null
+    },
+    {
+      "id": 44,
+      "title": "making eye-socket",
+      "description": "How to accurately place iris",
+      "priority": "medium",
+      "status": "todo",
+      "category": "General Artistic Study",
+      "due_date": "2025-11-25",
+      "created_at": "2025-11-22T17:35:19",
+      "completed_at": null,
+      "updated_at": "2025-11-22T17:35:19",
+      "tip": null
+    },
+    {
+      "id": 45,
+      "title": "making fingets",
+      "description": "i am struggling with the proportions of different bones in finger",
+      "priority": "high",
+      "status": "todo",
+      "category": "Anatomy – Finger Proportions",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T17:36:08",
+      "completed_at": null,
+      "updated_at": "2025-11-22T17:36:08",
+      "tip": null
+    },
+    {
+      "id": 46,
+      "title": "",
+      "description": "",
+      "priority": "low",
+      "status": "todo",
+      "category": "General Art Exploration",
+      "due_date": "2025-11-29",
+      "created_at": "2025-11-22T17:46:01",
+      "completed_at": null,
+      "updated_at": "2025-11-22T17:46:01",
+      "tip": null
+    },
+    {
+      "id": 47,
+      "title": "Study Inverted Figure Anatomy",
+      "description": "Analyze and sketch the anatomy of figures in an upside-down position. Focus on understanding how gravity affects muscle tension and body balance in this orientation.",
+      "priority": "high",
+      "status": "todo",
+      "category": "Anatomy",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T18:01:29",
+      "completed_at": null,
+      "updated_at": "2025-11-22T18:01:29",
+      "tip": null
+    },
+    {
+      "id": 48,
+      "title": "Gesture Drawing of Upside-Down Figures",
+      "description": "Practice quick gesture drawings of figures in an upside-down position. Aim to capture the fluidity and balance of the pose in under 2 minutes per sketch.",
+      "priority": "high",
+      "status": "todo",
+      "category": "Gesture",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T18:01:29",
+      "completed_at": null,
+      "updated_at": "2025-11-22T18:01:29",
+      "tip": null
+    },
+    {
+      "id": 49,
+      "title": "Perspective Study of Inverted Figures",
+      "description": "Create a series of sketches that explore the perspective of figures viewed from below when they are upside-down. Experiment with different angles and viewpoints.",
+      "priority": "high",
+      "status": "todo",
+      "category": "Perspective",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T18:01:29",
+      "completed_at": null,
+      "updated_at": "2025-11-22T18:01:29",
+      "tip": null
+    },
+    {
+      "id": 50,
+      "title": "Inverted Gesture Drawing",
+      "description": "Draw 12 inverted gestures, 1 minute each, focusing on capturing the essence of the pose while upside down.",
+      "priority": "high",
+      "status": "todo",
+      "category": "gesture",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T18:09:35",
+      "completed_at": null,
+      "updated_at": "2025-11-22T18:09:35",
+      "tip": null
+    },
+    {
+      "id": 51,
+      "title": "Upside Down Structural Analysis",
+      "description": "Reconstruct 5 figures using ribcage–pelvis boxes while viewing the reference upside down.",
+      "priority": "high",
+      "status": "todo",
+      "category": "structure",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T18:09:35",
+      "completed_at": null,
+      "updated_at": "2025-11-22T18:09:35",
+      "tip": null
+    },
+    {
+      "id": 52,
+      "title": "Inverted Proportional Study",
+      "description": "Study 8 poses upside down, focusing on maintaining correct proportions.",
+      "priority": "high",
+      "status": "todo",
+      "category": "proportion",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T18:09:35",
+      "completed_at": null,
+      "updated_at": "2025-11-22T18:09:35",
+      "tip": null
+    },
+    {
+      "id": 53,
+      "title": "Upside Down Contour Exploration",
+      "description": "Draw 6 figures upside down, focusing solely on contour lines.",
+      "priority": "medium",
+      "status": "todo",
+      "category": "contour",
+      "due_date": "2025-11-25",
+      "created_at": "2025-11-22T18:09:35",
+      "completed_at": null,
+      "updated_at": "2025-11-22T18:09:35",
+      "tip": null
+    },
+    {
+      "id": 54,
+      "title": "Study foundational forms from note: So i want to learn how to properly making a figure up-side down",
+      "description": "Break the subject into simple 3D solids and redraw it from 4 angles.",
+      "priority": "high",
+      "status": "todo",
+      "category": "Form Construction",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T18:11:49",
+      "completed_at": null,
+      "updated_at": "2025-11-22T18:11:49",
+      "tip": null
+    },
+    {
+      "id": 55,
+      "title": "Reference-based analysis study",
+      "description": "Collect 5 reference images related to the note topic and analyze proportions.",
+      "priority": "medium",
+      "status": "todo",
+      "category": "Reference Study",
+      "due_date": "2025-11-25",
+      "created_at": "2025-11-22T18:11:50",
+      "completed_at": null,
+      "updated_at": "2025-11-22T18:11:50",
+      "tip": null
+    },
+    {
+      "id": 56,
+      "title": "10 quick sketches",
+      "description": "Draw 10 quick studies (2 minutes each) based on the theme of the note.",
+      "priority": "medium",
+      "status": "todo",
+      "category": "Gesture / Quick Studies",
+      "due_date": "2025-11-25",
+      "created_at": "2025-11-22T18:11:50",
+      "completed_at": null,
+      "updated_at": "2025-11-22T18:11:50",
+      "tip": null
+    },
+    {
+      "id": 57,
+      "title": "Inverted Gesture Studies",
+      "description": "Draw 12 figures upside down, focusing on capturing the gesture in 1-minute each. Begin with simple poses and gradually increase complexity.",
+      "priority": "high",
+      "status": "todo",
+      "category": "gesture",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T18:14:03",
+      "completed_at": null,
+      "updated_at": "2025-11-22T18:14:03",
+      "tip": null
+    },
+    {
+      "id": 58,
+      "title": "Inverted Structural Analysis",
+      "description": "Reconstruct 5 figures upside down using ribcage and pelvis boxes. Spend 10 minutes on each figure to ensure accuracy in structure.",
+      "priority": "high",
+      "status": "todo",
+      "category": "structure",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T18:14:03",
+      "completed_at": null,
+      "updated_at": "2025-11-22T18:14:03",
+      "tip": null
+    },
+    {
+      "id": 59,
+      "title": "Inverted Landmarks Identification",
+      "description": "Identify and mark key anatomical landmarks on 8 upside-down figures. Spend 5 minutes on each figure to practice quick identification.",
+      "priority": "high",
+      "status": "todo",
+      "category": "anatomy",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T18:14:03",
+      "completed_at": null,
+      "updated_at": "2025-11-22T18:14:03",
+      "tip": null
+    },
+    {
+      "id": 60,
+      "title": "Inverted Proportion Accuracy Drill",
+      "description": "Draw 6 figures upside down, focusing on maintaining accurate proportions. Spend 15 minutes on each figure to refine your observation skills.",
+      "priority": "high",
+      "status": "todo",
+      "category": "proportion",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T18:14:04",
+      "completed_at": null,
+      "updated_at": "2025-11-22T18:14:04",
+      "tip": null
+    },
+    {
+      "id": 61,
+      "title": "Advanced Inverted Figure Composition",
+      "description": "Create a composition of 3 figures interacting upside down. Spend 30 minutes on each composition to challenge your understanding of space and interaction.",
+      "priority": "high",
+      "status": "todo",
+      "category": "composition",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T18:14:04",
+      "completed_at": null,
+      "updated_at": "2025-11-22T18:14:04",
+      "tip": null
+    },
+    {
+      "id": 62,
+      "title": "Mastering Inverted Figure Drawing with 10 Quick Gestures",
+      "description": "Begin by drawing 10 quick 1-minute gestures of figures in an upside-down orientation. Focus on capturing the essence and flow of the pose without getting bogged down in details. This exercise is designed to train your brain to see the figure as a collection of shapes and lines, rather than preconceived symbols. The goal is to enhance your ability to perceive and capture the true gesture of the figure, even when viewed from an unconventional angle.",
+      "priority": "high",
+      "status": "todo",
+      "category": "gesture",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T18:24:18",
+      "completed_at": null,
+      "updated_at": "2025-11-22T18:24:18",
+      "tip": null
+    },
+    {
+      "id": 63,
+      "title": "Inverted Figure Construction: 5 Ribcage and Pelvis Studies",
+      "description": "Draw 5 figures upside down, focusing on constructing the ribcage and pelvis using simple geometric shapes. Spend 10 minutes on each figure to ensure accuracy and understanding of the underlying structure. This task will help you understand how these key anatomical landmarks relate to each other in an inverted position, improving your spatial awareness and structural drawing skills.",
+      "priority": "high",
+      "status": "todo",
+      "category": "structure",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T18:24:18",
+      "completed_at": null,
+      "updated_at": "2025-11-22T18:24:18",
+      "tip": null
+    },
+    {
+      "id": 64,
+      "title": "Advanced Inverted Figure Analysis: 3 Detailed Studies with Landmarks",
+      "description": "Select 3 complex poses and draw them upside down, spending 20 minutes on each. Focus on identifying and accurately placing anatomical landmarks such as the acromion, ASIS, and patella. This exercise will deepen your understanding of human anatomy and improve your ability to accurately depict figures from unconventional perspectives.",
+      "priority": "high",
+      "status": "todo",
+      "category": "anatomy",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T18:24:18",
+      "completed_at": null,
+      "updated_at": "2025-11-22T18:24:18",
+      "tip": null
+    },
+    {
+      "id": 65,
+      "title": "Inverted Figure Rendering: 2 Complete Drawings with Shading",
+      "description": "Create 2 fully rendered drawings of figures upside down, dedicating 30 minutes to each. Focus on applying shading to enhance the three-dimensional form and depth of the figure. This task will challenge your ability to render light and shadow accurately, even when the figure is viewed from an unusual angle, thereby improving your overall rendering skills.",
+      "priority": "medium",
+      "status": "todo",
+      "category": "rendering",
+      "due_date": "2025-11-25",
+      "created_at": "2025-11-22T18:24:18",
+      "completed_at": null,
+      "updated_at": "2025-11-22T18:24:18",
+      "tip": null
+    },
+    {
+      "id": 66,
+      "title": "Mastering Inverted Gesture Drawing for Figure Accuracy",
+      "description": "Begin by drawing 12 inverted gestures, each lasting 1 minute. Focus on capturing the essence and flow of the figure while it is upside down. This exercise will train your brain to see the figure as a collection of shapes and lines, rather than a recognizable human form. The goal is to improve your ability to see and replicate angles and proportions without relying on preconceived notions.",
+      "priority": "high",
+      "status": "todo",
+      "category": "gesture",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T20:39:21",
+      "completed_at": null,
+      "updated_at": "2025-11-22T20:39:21",
+      "tip": null
+    },
+    {
+      "id": 67,
+      "title": "Constructing Inverted Figures Using Ribcage and Pelvis Boxes",
+      "description": "Draw 5 figures upside down, focusing on constructing the ribcage and pelvis using boxes. Spend 10 minutes on each figure to carefully analyze and construct these forms. This exercise will enhance your understanding of the 3D structure of the figure and improve your spatial reasoning when the figure is inverted.",
+      "priority": "high",
+      "status": "todo",
+      "category": "structure",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T20:39:21",
+      "completed_at": null,
+      "updated_at": "2025-11-22T20:39:21",
+      "tip": null
+    },
+    {
+      "id": 68,
+      "title": "Analyzing Weight Shift and Balance in Inverted Poses",
+      "description": "Study 8 inverted poses, focusing solely on weight shift and balance. Spend 5 minutes on each pose to identify how the weight is distributed throughout the figure. This task will improve your ability to perceive and depict balance and weight distribution, crucial for realistic figure drawing.",
+      "priority": "high",
+      "status": "todo",
+      "category": "balance",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T20:39:21",
+      "completed_at": null,
+      "updated_at": "2025-11-22T20:39:21",
+      "tip": null
+    },
+    {
+      "id": 69,
+      "title": "Refining Proportions and Landmarks in Inverted Figures",
+      "description": "Complete 6 detailed studies of inverted figures, focusing on refining proportions and identifying key anatomical landmarks. Allocate 15 minutes per study to ensure precision. This exercise will sharpen your ability to accurately depict proportions and recognize landmarks, even when the figure is upside down.",
+      "priority": "high",
+      "status": "todo",
+      "category": "proportion",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T20:39:21",
+      "completed_at": null,
+      "updated_at": "2025-11-22T20:39:21",
+      "tip": null
+    },
+    {
+      "id": 70,
+      "title": "Advanced Inverted Figure Drawing with Emphasis on Gesture and Structure",
+      "description": "Create 3 full inverted figure drawings, each taking 30 minutes. Begin with a gesture sketch, then build up the structure using forms and landmarks. This comprehensive task will integrate your skills in gesture, structure, and proportion, culminating in a complete and accurate inverted figure drawing.",
+      "priority": "high",
+      "status": "todo",
+      "category": "figure",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T20:39:21",
+      "completed_at": null,
+      "updated_at": "2025-11-22T20:39:21",
+      "tip": null
+    },
+    {
+      "id": 71,
+      "title": "Mastering Upside-Down Figure Drawing with Gesture",
+      "description": "Begin by drawing 15 upside-down gesture drawings, each lasting 2 minutes. This exercise will help you detach from preconceived notions of anatomy and focus on the pure flow of the figure. By drawing upside-down, you will train your brain to see shapes and lines rather than symbolic representations of body parts. This stage is crucial for developing a strong sense of gesture and movement, which is foundational for figure drawing.",
+      "priority": "high",
+      "status": "todo",
+      "category": "gesture drawing",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T20:49:35",
+      "completed_at": null,
+      "updated_at": "2025-11-22T20:49:35",
+      "tip": null
+    },
+    {
+      "id": 72,
+      "title": "Identifying Landmarks in Upside-Down Figures",
+      "description": "Complete 10 upside-down drawings focusing on identifying key anatomical landmarks, each for 5 minutes. This stage involves marking the positions of the head, shoulders, ribcage, pelvis, knees, and feet. By practicing this upside-down, you will enhance your ability to see and place these landmarks accurately, which is essential for maintaining proportion and structure in your drawings.",
+      "priority": "high",
+      "status": "todo",
+      "category": "anatomical landmarks",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T20:49:35",
+      "completed_at": null,
+      "updated_at": "2025-11-22T20:49:35",
+      "tip": null
+    },
+    {
+      "id": 73,
+      "title": "Building Structure with Ribcage and Pelvis Boxes",
+      "description": "Draw 8 upside-down figures, focusing on constructing the ribcage and pelvis using box forms, each for 10 minutes. This stage is about understanding the 3D structure of the body and how these forms interact in space. By practicing this upside-down, you will develop a stronger sense of spatial awareness and the ability to visualize the figure as a series of interlocking volumes.",
+      "priority": "high",
+      "status": "todo",
+      "category": "structural drawing",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T20:49:35",
+      "completed_at": null,
+      "updated_at": "2025-11-22T20:49:35",
+      "tip": null
+    },
+    {
+      "id": 74,
+      "title": "Refining Upside-Down Figures for Accuracy",
+      "description": "Select 5 of your previous upside-down drawings and refine them for 15 minutes each. Focus on correcting proportions, enhancing the gesture, and ensuring anatomical accuracy. This stage is about integrating all the skills you've practiced—gesture, landmarks, and structure—into a cohesive and accurate figure drawing.",
+      "priority": "high",
+      "status": "todo",
+      "category": "accuracy and refinement",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T20:49:35",
+      "completed_at": null,
+      "updated_at": "2025-11-22T20:49:35",
+      "tip": null
+    },
+    {
+      "id": 75,
+      "title": "Mastering Upside-Down Figure Drawing with Gesture",
+      "description": "Begin by drawing 15 upside-down gesture drawings, each lasting 2 minutes. This exercise will help you break free from preconceived notions of anatomy and focus purely on the flow and movement of the figure. By drawing the figure upside-down, you will engage the right side of your brain, which is more attuned to spatial relationships and abstract thinking. This stage is crucial for developing a strong sense of gesture and movement without being distracted by the details of anatomy.",
+      "priority": "high",
+      "status": "todo",
+      "category": "gesture drawing",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T20:53:52",
+      "completed_at": null,
+      "updated_at": "2025-11-22T20:53:52",
+      "tip": null
+    },
+    {
+      "id": 76,
+      "title": "Identifying Landmarks in Upside-Down Figures",
+      "description": "Create 10 upside-down drawings focusing on identifying and marking key anatomical landmarks. Spend 5 minutes on each drawing. This stage will help you understand the placement and relationship of major anatomical points such as the shoulders, hips, knees, and elbows. By practicing upside-down, you will challenge your perception and improve your ability to accurately place these landmarks without relying on habitual patterns.",
+      "priority": "high",
+      "status": "todo",
+      "category": "anatomical landmarks",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T20:53:52",
+      "completed_at": null,
+      "updated_at": "2025-11-22T20:53:52",
+      "tip": null
+    },
+    {
+      "id": 77,
+      "title": "Building Structure with Ribcage and Pelvis Boxes",
+      "description": "Draw 8 upside-down figures, each for 10 minutes, focusing on constructing the ribcage and pelvis using box forms. This exercise will enhance your understanding of the 3D structure and spatial relationships within the figure. By visualizing these forms upside-down, you will develop a stronger grasp of how the ribcage and pelvis interact and rotate in space, which is crucial for creating believable and dynamic figures.",
+      "priority": "high",
+      "status": "todo",
+      "category": "structural drawing",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T20:53:52",
+      "completed_at": null,
+      "updated_at": "2025-11-22T20:53:52",
+      "tip": null
+    },
+    {
+      "id": 78,
+      "title": "Refining Accuracy and Proportions in Upside-Down Figures",
+      "description": "Complete 5 upside-down figure drawings, each for 20 minutes, focusing on refining accuracy and proportions. This stage will challenge you to integrate gesture, landmarks, and structure into a cohesive and accurate representation of the figure. By working upside-down, you will further develop your ability to see and correct proportional inaccuracies, leading to more precise and lifelike drawings.",
+      "priority": "high",
+      "status": "todo",
+      "category": "accuracy and proportions",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T20:53:52",
+      "completed_at": null,
+      "updated_at": "2025-11-22T20:53:52",
+      "tip": null
+    },
+    {
+      "id": 79,
+      "title": "Mastering Gesture Drawing for Dynamic Poses",
+      "description": "This task focuses on developing a strong foundation in gesture drawing, which is crucial for capturing the essence and movement of the human figure. You will complete 20 gesture drawings, each lasting 1 minute, to warm up and loosen your hand. This will be followed by 10 gesture drawings with a focus on flow and energy, each lasting 5 minutes. The goal is to improve your ability to capture the dynamic movement and rhythm of the figure, which is essential for creating lively and expressive art.",
+      "priority": "high",
+      "status": "todo",
+      "category": "gesture drawing",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T20:55:46",
+      "completed_at": null,
+      "updated_at": "2025-11-22T20:55:46",
+      "tip": null
+    },
+    {
+      "id": 80,
+      "title": "Building Structure with Ribcage and Pelvis Forms",
+      "description": "In this task, you will learn to construct the human figure using basic forms, focusing on the ribcage and pelvis. Start by drawing 10 figures using the 'bean' method to understand the relationship between the ribcage and pelvis. Then, create 10 more drawings using box forms to represent these structures, paying attention to their rotation and tilt. This exercise will help you visualize the figure in three dimensions and improve your understanding of how the torso moves.",
+      "priority": "high",
+      "status": "todo",
+      "category": "structural drawing",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T20:55:46",
+      "completed_at": null,
+      "updated_at": "2025-11-22T20:55:46",
+      "tip": null
+    },
+    {
+      "id": 81,
+      "title": "Enhancing Proportional Accuracy in Figure Drawing",
+      "description": "This task is designed to improve your accuracy in capturing the proportions of the human figure. Begin with 5 quick studies of the Loomis method to establish basic proportions. Follow this with 5 longer studies, each lasting 20 minutes, focusing on measuring and comparing angles and lengths. Use a pencil or a ruler to check your measurements against the reference. This exercise will enhance your ability to judge proportions accurately, a skill that is vital for realistic figure drawing.",
+      "priority": "high",
+      "status": "todo",
+      "category": "proportional accuracy",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T20:55:46",
+      "completed_at": null,
+      "updated_at": "2025-11-22T20:55:46",
+      "tip": null
+    },
+    {
+      "id": 82,
+      "title": "Advanced Rendering Techniques for Realistic Textures",
+      "description": "In this optional task, you will explore advanced rendering techniques to create realistic textures on the human figure. Begin by selecting a reference with varied textures, such as skin, fabric, and hair. Create 3 detailed studies, each lasting 1 hour, focusing on rendering these textures with a range of values. Use cross-hatching, stippling, and blending to achieve different effects. This task will enhance your ability to render realistic surfaces and add depth to your drawings.",
+      "priority": "low",
+      "status": "todo",
+      "category": "advanced rendering",
+      "due_date": "2025-11-29",
+      "created_at": "2025-11-22T20:55:46",
+      "completed_at": null,
+      "updated_at": "2025-11-22T20:55:46",
+      "tip": null
+    },
+    {
+      "id": 83,
+      "title": "Making muslces on forearms",
+      "description": "",
+      "priority": "medium",
+      "status": "todo",
+      "category": "General Artistic Study",
+      "due_date": "2025-11-25",
+      "created_at": "2025-11-22T21:02:19",
+      "completed_at": null,
+      "updated_at": "2025-11-22T21:02:19",
+      "tip": null
+    },
+    {
+      "id": 84,
+      "title": "making muscles on forearms",
+      "description": "i want to start working on adding muslces on arm to make proper deifntion",
+      "priority": "high",
+      "status": "todo",
+      "category": "Anatomy – Forearm Musculature",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T21:03:21",
+      "completed_at": null,
+      "updated_at": "2025-11-22T21:03:21",
+      "tip": null
+    },
+    {
+      "id": 85,
+      "title": "doing 10 drawings of feet",
+      "description": "I want to understand how to make the feet its the most importnat part of any figure",
+      "priority": "high",
+      "status": "todo",
+      "category": "Anatomy – Feet",
+      "due_date": "2025-11-23",
+      "created_at": "2025-11-22T21:20:00",
+      "completed_at": null,
+      "updated_at": "2025-11-22T21:20:00",
+      "tip": null
     }
   ]
 }
