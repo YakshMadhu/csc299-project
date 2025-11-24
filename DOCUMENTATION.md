@@ -720,3 +720,637 @@ This version provides:
 ✔ Improved user experience
 
 ---
+
+# ✅ **DOCUMENTATION.md — User Guide (Prototype 3)**
+
+### *ArtGrow – PKMS + Task Manager + Multi-Agent AI Assistant (CLI Edition)*
+
+**Version:** Prototype 3
+**Environment:** Windows, macOS, Linux (Python 3.x)
+**Data Storage:** JSON files (portable, human-readable)
+
+---
+
+# **1. Introduction**
+
+ArtGrow Prototype 3 is a command-line productivity system built for artists, students, and creators who want a unified workflow combining:
+
+* A **Personal Knowledge Management System (PKMS)**
+* A **Task Manager for art study, projects, and routines**
+* A **Terminal-based chat interface**
+* **Five specialized AI assistant modules**:
+
+  * AI Summarizer (notes → tips)
+  * AI Practice Generator (tasks → drills)
+  * AI Skill Analyst (notes → strengths/weaknesses/plan)
+  * AI Mentor (ask any art question)
+  * AI Art Critic (formal critique system)
+  * AI Anatomy Expert (species/body-part anatomy)
+
+Prototype 3 is more powerful, more intelligent, and more complete than the previous versions.
+
+This guide explains **HOW to use the system**, not how it’s built.
+
+---
+
+# **2. Installation & Setup**
+
+## **2.1 System Requirements**
+
+* Python 3.9+
+* Terminal access (Windows / macOS / Linux)
+* Optional: OpenAI API key for AI features
+
+---
+
+## **2.2 Install Dependencies**
+
+From your terminal:
+
+```
+pip install openai
+```
+
+---
+
+## **2.3 Navigate to Your Project**
+
+```
+cd csc299-project
+```
+
+---
+
+## **2.4 Set Your AI Key (Required for AI commands)**
+
+### macOS / Linux:
+
+```
+export OPENAI_API_KEY="sk-yourkey"
+```
+
+### Windows PowerShell:
+
+```
+$env:OPENAI_API_KEY="sk-yourkey"
+```
+
+Without a key:
+
+* PKMS works
+* Tasks works
+* AI commands will display an error
+
+---
+
+# **3. Running the Program**
+
+Start ArtGrow:
+
+```
+python -m final.main
+```
+
+You should see:
+
+```
+========================================
+   ArtGrow – PKMS & Task Coach (CLI)
+========================================
+Type 'help' to see commands.
+Type 'quit' or 'exit' to leave.
+```
+
+The system is now active.
+
+---
+
+# **4. General Command Usage**
+
+ArtGrow uses a **chat-style interface**.
+You simply type commands like:
+
+```
+add-note
+search-tasks anatomy
+ai-critique A standing figure...
+```
+
+At any time:
+
+```
+help
+```
+
+Shows the complete command list.
+
+---
+
+# **5. Notes (PKMS) System**
+
+Notes store theory, breakdowns, observations, anatomy rules, and anything you want to remember.
+
+---
+
+## **5.1 Create a Note**
+
+```
+add-note
+```
+
+The program prompts:
+
+```
+Title:
+Content:   (finish with an empty line)
+Tags: anatomy, gesture, shading
+```
+
+Contents can span multiple lines.
+Press **Enter on an empty line** to finish.
+
+---
+
+## **5.2 List All Notes**
+
+```
+list-notes
+```
+
+Shows:
+
+* ID
+* Title
+* Tags
+* Created/updated timestamps
+
+---
+
+## **5.3 View a Note**
+
+```
+view-note <id>
+```
+
+Example:
+
+```
+view-note 5
+```
+
+---
+
+## **5.4 Search Notes by Keywords**
+
+```
+search-notes <word1 word2 word3>
+```
+
+Examples:
+
+```
+search-notes gesture
+search-notes shading head proportions
+```
+
+Matches:
+
+* Title
+* Content
+* Tags
+
+---
+
+## **5.5 Filter Notes by Tag**
+
+```
+filter-notes tag <tagname>
+```
+
+Example:
+
+```
+filter-notes tag anatomy
+```
+
+---
+
+## **5.6 Edit a Note**
+
+```
+edit-note <id>
+```
+
+You can modify:
+
+* title
+* content
+* tags
+
+---
+
+## **5.7 Delete a Note**
+
+(with confirmation safety)
+
+```
+delete-note <id>
+```
+
+System will ask:
+
+```
+Are you sure? (y/n)
+```
+
+---
+
+# **6. Task Manager System**
+
+Tasks help organize:
+
+* art practice routines
+* studies
+* long-term drawing projects
+* homework
+* deadlines
+
+---
+
+## **6.1 Add a Task**
+
+```
+add-task
+```
+
+The program prompts for:
+
+* Title
+* Description
+* Priority: `low/medium/high`
+* Category
+* Due Date (`YYYY-MM-DD`)
+
+---
+
+## **6.2 List Tasks**
+
+```
+list-tasks
+```
+
+Filtered:
+
+```
+list-tasks todo
+list-tasks in-progress
+list-tasks done
+```
+
+---
+
+## **6.3 Mark a Task as In-Progress**
+
+```
+start-task <id>
+```
+
+---
+
+## **6.4 Mark a Task as Done**
+
+```
+complete-task <id>
+```
+
+---
+
+## **6.5 Search Tasks**
+
+```
+search-tasks <keywords>
+```
+
+Example:
+
+```
+search-tasks shading gesture
+```
+
+---
+
+## **6.6 Edit an Existing Task**
+
+```
+edit-task <id>
+```
+
+You can change:
+
+* Title
+* Description
+* Priority
+* Category
+* Due Date
+
+---
+
+## **6.7 Delete a Task**
+
+```
+delete-task <id>
+```
+
+---
+
+# **7. AI Features — Prototype 3 (New & Expanded)**
+
+Prototype 3 introduces **5 different AI agents**, each with a different purpose.
+
+---
+
+# ⭐ **7.1 AI Summarizer — Convert Notes into Tips**
+
+```
+ai-summarize-note <id>
+```
+
+Example:
+
+```
+ai-summarize-note 3
+```
+
+Output (example):
+
+```
+AI Tip:
+--------
+Focus on aligning the ribcage tilt with pelvic tilt for naturalistic poses.
+--------
+```
+
+---
+
+# ⭐ **7.2 AI Practice Generator — Turn Tasks Into Drills**
+
+```
+ai-generate-practice <id>
+```
+
+Example:
+
+```
+ai-generate-practice 1
+```
+
+Output sample:
+
+```
+Practice Drills:
+1. 10 torso studies using boxes
+2. 15 ribcage rotation quick sketches
+3. 3 timed 5-minute poses focusing on tilt/lean
+```
+
+---
+
+# ⭐ **7.3 AI Skill Analysis — Strengths, Weaknesses, Plan**
+
+```
+ai-skill-analysis <id>
+```
+
+You pass a note ID, and AI produces:
+
+* Strengths
+* Weaknesses
+* A training roadmap
+
+Example:
+
+```
+ai-skill-analysis 4
+```
+
+Output sample:
+
+```
+Strengths: Good understanding of perspective layering.
+Weaknesses: Overuse of parallel lines in cylindrical forms.
+Training Plan:
+- 20 ellipse drills daily
+- Practice drawing cylinders in 3-point perspective
+...
+```
+
+---
+
+# ⭐ **7.4 AI Art Mentor — Ask ANY Question**
+
+```
+ai-mentor <your question>
+```
+
+Example:
+
+```
+ai-mentor how do i improve shading transitions
+```
+
+The AI gives:
+
+* Methods
+* Drills
+* Explanations
+* Warnings
+* Best practices
+
+---
+
+# ⭐ **7.5 AI Art Critique — Advanced Error Detection**
+
+```
+ai-critique <your description>
+```
+
+You write a **long, detailed, neutral** drawing description.
+AI returns:
+
+* Structural weaknesses
+* Proportion issues
+* Perspective drift
+* Shading issues
+* Missing details in your description
+
+Example:
+
+```
+ai-critique A crouching figure with the ribcage leaning forward...
+```
+
+---
+
+# ⭐ **7.6 AI Anatomy Expert — ANY Species + ANY Body Part**
+
+```
+ai-anatomy <species> <body_part>
+```
+
+Examples:
+
+```
+ai-anatomy human forearm
+ai-anatomy eagle wing
+ai-anatomy octopus tentacle
+ai-anatomy horse shoulder
+ai-anatomy lion paw
+```
+
+This agent returns:
+
+* Full bone breakdown
+* All muscles (origins, insertions, actions)
+* Biomechanics and movement
+* Functional behavior and adaptations
+
+This is a **scientific module**, not an art module.
+
+---
+
+# **8. Storage System**
+
+All data is stored in portable JSON:
+
+```
+final/data/notes.json
+final/data/tasks.json
+```
+
+Properties:
+
+* Human-readable
+* Cross-platform
+* Auto-updated
+* Safe to manually backup
+
+---
+
+# **9. Command Logging (Prototype 3)**
+
+Every action is logged in:
+
+```
+final/logs/commands.log
+```
+
+Each entry includes:
+
+* timestamp
+* command
+* arguments
+* session history
+
+Useful for:
+
+* debugging
+* academic evaluation
+* version tracking
+
+---
+
+# **10. Common Issues & Fixes**
+
+### ❌ AI Error: "OPENAI_API_KEY not set"
+
+Set your key again:
+
+```
+$env:OPENAI_API_KEY="sk-..."
+```
+
+### ❌ Crash when creating note
+
+You MUST end content with an **empty line**.
+
+### ❌ Unrecognized command
+
+Commands use **hyphens**, not spaces:
+
+❌ `view note 3`
+✔ `view-note 3`
+
+### ❌ JSON corrupted
+
+Delete file:
+
+```
+rm final/data/notes.json
+```
+
+Program auto-rebuilds it.
+
+---
+
+# **11. Example Full Session**
+
+```
+> add-note
+Title: Pelvis anatomy
+Content:
+The pelvis tilts anteriorly in most neutral poses...
+<empty line>
+
+Tags: anatomy
+Saved note #1
+
+> ai-summarize-note 1
+(AI summary appears)
+
+> add-task
+Title: Ribcage rotation study
+Description: 15 drawings from reference
+Priority: medium
+Category: anatomy
+Due date: 2025-11-30
+Saved task #1
+
+> ai-generate-practice 1
+(AI drills appear)
+
+> ai-critique A standing male figure viewed from above...
+(AI critique appears)
+
+> ai-anatomy eagle wing
+(Full biomechanical breakdown appears)
+
+> exit
+```
+
+---
+
+# **12. What Prototype 3 Achieves**
+
+Prototype 3 introduces major upgrades:
+
+### PKMS + Tasks
+
+✔ Better editing
+✔ Tag filtering
+✔ Stronger search
+✔ In-progress workflow
+✔ Safer delete
+✔ Timestamps everywhere
+
+### AI Features (5 Agents)
+
+✔ Note summarizer
+✔ Task practice generator
+✔ Skill analysis with learning plan
+✔ Mentor for any art question
+✔ Ultra-detailed anatomical engine
+✔ Industry-level art critique system
+
+Prototype 3 is now a **fully capable art growth ecosystem**, not just a PKMS.
+
+---
