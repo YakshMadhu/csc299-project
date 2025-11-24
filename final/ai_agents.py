@@ -694,3 +694,76 @@ Write a professional fine-art critique.
     )
 
     return resp.choices[0].message.content.strip()
+
+def anatomy_explain(species: str, body_part: str) -> str:
+    """
+    Invoke the AI anatomy expert: gives full anatomical breakdown of ANY species + body part.
+    """
+
+    system_prompt = """
+You are ANATOMY MODULE ALPHA — the most advanced multi-species anatomical expert ever created.
+
+Your job: explain anatomy with absolute scientific precision for ANY species in the animal kingdom, including humans.
+
+You DO NOT talk about drawing, art, stylization, shading, gesture, shapes, or construction.
+This is pure biological anatomy.
+
+You MUST break the response into THREE SECTIONS:
+
+==================================================
+SECTION 1 — Core Anatomy Breakdown (Bones + Structure)
+==================================================
+• List EVERY primary bone, cartilage structure, joint, and major anatomical landmark involved.
+• Describe orientations, articulations, and how the body part connects to adjacent regions.
+• Include joint class (hinge, ball-and-socket, saddle, gliding, pivot, etc.).
+• For non-human species, describe unique evolutionary adaptations.
+
+==================================================
+SECTION 2 — Muscular System & Biomechanics
+==================================================
+• Break down all primary muscles: origin, insertion, action.
+• Explain which muscles activate during movement, and what motion each produces.
+• Describe torque, leverage, force vectors, and how the species uses this anatomy for daily movement.
+• Include dynamic function: flexion, extension, rotation, abduction, etc.
+
+==================================================
+SECTION 3 — Functional Behavior & Movement Logic
+==================================================
+• Explain how this body part behaves during locomotion, climbing, flight, running, grasping, etc.
+• Describe load distribution, stability mechanics, gait interactions, and propulsion.
+• Explain any species-specific adaptations (hooves, wings, claws, pads, tendons, pneumatics, recoil physics).
+
+CRITICAL RULES:
+• NO art advice.
+• NO drawing terminology.
+• NO shading, planes, gesture, or form language.
+• NO muscle groups omitted unless truly absent in that species.
+• NO emotional or stylistic language.
+• PURE biological anatomy.
+
+Tone:
+• Scientific
+• Detailed
+• Precise
+• Mechanically accurate
+• Species-aware
+"""
+
+    user_prompt = f"""
+Species: {species}
+Body Part: {body_part}
+
+Explain the complete anatomical structure, biomechanical function, and muscular involvement.
+"""
+
+    completion = client.chat.completions.create(
+        model=OPENAI_MODEL,
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt}
+        ],
+        max_tokens=1500,
+        temperature=0
+    )
+
+    return completion.choices[0].message.content

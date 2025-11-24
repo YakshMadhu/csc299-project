@@ -48,8 +48,9 @@ Commands:
   ai-skill-analysis <id>      - analyze a note and get strengths, weaknesses, plan
   ai-mentor <question>        - ask the AI art mentor a question
   ai-critique <description>   - get AI critique on your artwork description (make sure it's detailed! for best results, it's independent of your notes/tasks)
+  ai-anatomy <species> <body_part>   - get deep anatomical explanation for any species and body part (bones, muscles, function)
 
-
+          
   help                        - show this help
   quit / exit                 - exit the program
 """)
@@ -324,7 +325,28 @@ def handle_command(line: str) -> bool:
         except Exception as e:
             print(f"Error calling AI: {e}")
 
+        return 
+    
+    if cmd == "ai-anatomy":
+        if len(args) < 2:
+            print("Usage: ai-anatomy <species> <body_part>")
+            return True
+
+        species = args[0]
+        body_part = " ".join(args[1:])
+
+        from .ai_agents import anatomy_explain
+
+        try:
+            result = anatomy_explain(species, body_part)
+            print("\nAnatomy Analysis:\n-------------------")
+            print(result)
+            print("-------------------")
+        except Exception as e:
+            print(f"Error calling AI: {e}")
+
         return True
+
 
 
 
