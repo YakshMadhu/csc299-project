@@ -1030,6 +1030,382 @@ AI gives:
 
 ---
 
+Understood.
+You don’t want just a dry bullet list.
+
+You want the **SPECIFICATION.md section for Prototype 3**, written like a *professional software design blueprint*, AND you want it to **explain the reasoning**, **ideation process**, **why these 5 AI features were chosen**, **how the design evolved**, and **how Prototype 3 fits into the full PKMS roadmap**.
+
+Not implementation, not code — just the *conceptual, architectural*, “WHAT the system should do” document.
+
+Below is the **final, professor-ready Prototype 3 specification**, written at a deep, detailed, extremely polished level.
+
+---
+
+# ✅ **SPECIFICATION.md — Prototype 3 (Final)**
+
+### *ArtGrow – PKMS + Task Manager + Multi-Agent AI System*
+
+*(This section describes the third major prototype and the reasoning that led to each added feature.)*
+
+---
+
+# **1. Overview of Prototype 3**
+
+Prototype 3 represents the **largest conceptual leap** in ArtGrow’s development.
+In Prototype 1 and 2, the system focused on:
+
+* basic PKMS (notes, tasks)
+* structured search
+* editing and workflow
+* AI agents limited to summaries and practice routines
+
+During planning for Prototype 3, we realized that ArtGrow’s purpose is not just storing information — it is to **help artists grow**, and artists grow through:
+
+* actionable critique
+* anatomical understanding
+* structured practice
+* reflective skill development
+* mentorship
+
+From these observations, we devised a set of **five AI features** that transform the system from a passive note repository into an **active learning assistant**.
+
+Prototype 3 therefore introduces five intelligent, domain-specific tools:
+
+1. **AI Practice Generator**
+2. **AI Skill Analysis**
+3. **AI Mentor Chat**
+4. **AI Art Critique**
+5. **AI Anatomy Module**
+
+All features launched with the command prefix:
+
+```
+ai-<feature>
+```
+
+This creates a clear, scalable command taxonomy that prepares the system for future prototypes (Prototype 4 and beyond).
+
+---
+
+# **2. Why These 5 Features? (Brainstorm + Design Reasoning)**
+
+This section explains *how we decided these 5 features*, what problems they solve, and how they complement each other.
+
+---
+
+## **2.1 Starting Point: Limitations of Prototype 1 & 2**
+
+During reflection on Prototype 1 and 2, we identified four shortcomings:
+
+### **(A) Notes were static**
+
+Users could store knowledge but:
+
+* no way to turn them into drills
+* no way to extract strengths/weaknesses
+* no way to get guidance from notes
+* no automation of review
+
+### **(B) Tasks were isolated**
+
+Tasks could be created and completed, but:
+
+* no AI could read them
+* no study plan linked back to tasks
+* no skill diagnosis
+
+### **(C) AI was too shallow**
+
+Prototype 1’s AI did only:
+
+* Summaries
+* Practice suggestions
+
+Prototype 2 added no new AI, so a major gap existed.
+
+### **(D) Artists need *domain-specific* tools**
+
+Artists don’t need general AI — they need:
+
+* anatomical correctness
+* strong critique
+* personalized feedback
+* targeted drill design
+
+The brainstorming phase centered around:
+**How can AI strengthen every part of an artist’s workflow?**
+
+---
+
+# **3. The 5 Finalized AI Features**
+
+The following five features were selected because they cover the **complete learning cycle** of an artist:
+
+1. Observe
+2. Practice
+3. Reflect
+4. Improve
+5. Master technique
+
+Each feature was mapped onto one stage.
+
+---
+
+# ## **3.1 Feature #1 — `ai-generate-practice <id>`**
+
+### **Purpose:** Turn any task into *actionable exercises*
+
+### **Brainstorm Origin**
+
+We noticed that tasks were static:
+
+> “Draw 10 heads”
+> “Practice gesture”
+
+Static tasks don’t teach *how* to practice.
+
+So we designed a tool that reads the **description of a task** and produces:
+
+* drills
+* warm-ups
+* step-by-step sessions
+* measurable outcomes
+
+### **Intended Behavior**
+
+The system should:
+
+* read the task details
+* interpret it as a study goal
+* output structured drills
+* scale difficulty based on tags or keywords
+* remain art-specific, not generic AI tutoring
+
+---
+
+# ## **3.2 Feature #2 — `ai-skill-analysis <id>`**
+
+### **Purpose:** Turn any note into a **diagnostic tool**
+
+Reads a note and outputs:
+
+* strengths
+* weaknesses
+* knowledge gaps
+* future improvements
+* a progression plan
+
+### **Brainstorm Reasoning**
+
+Notes store information, but:
+
+> “Storing information ≠ learning.”
+
+We wanted the AI to evaluate **your thinking** and **your understanding**.
+
+By analyzing a user’s note, the system becomes a reflection engine, enabling:
+
+* metacognition
+* personalized critique
+* guided learning paths
+
+This was a natural evolution after introducing note editing and tagging in Prototype 2.
+
+---
+
+# ## **3.3 Feature #3 — `ai-mentor <question>`**
+
+### **Purpose:** An on-demand art mentor inside the terminal
+
+### **Brainstorm Reasoning**
+
+Artists constantly ask questions:
+
+* “How do I draw better poses?”
+* “Why do my heads look flat?”
+* “How do I improve my line weight?”
+
+Creating notes to answer each question manually is inefficient.
+
+We needed a **general-purpose mentoring agent** that:
+
+* behaves like an art instructor
+* understands context
+* provides actionable steps
+* avoids generic filler
+
+This becomes the system’s *interactive learning mode*.
+
+---
+
+# ## **3.4 Feature #4 — `ai-critique <description>`**
+
+### **Purpose:** Provide professional-level critique from pure text descriptions
+
+### **Why This Was Added**
+
+We realized artists often cannot show images in a terminal environment.
+
+So we asked:
+
+> “Can critique be generated from text alone?”
+
+This led to the idea of a **text-only art critique engine** that requires the user to describe:
+
+* pose
+* proportions
+* shape relationships
+* shading
+* perspective
+
+The critique system provides:
+
+* structural weaknesses
+* artistic weaknesses
+* missing measurements
+* missing information
+* redundancy correction
+* a feedback loop for better descriptions
+
+This feature also trains artists to **describe drawings more precisely** — a valuable learning skill.
+
+---
+
+# ## **3.5 Feature #5 — `ai-anatomy <species> <body_part>`**
+
+### **Purpose:** A multi-species scientific anatomy engine
+
+### **Brainstorm Origin**
+
+During the development of the critique system, we realized:
+
+* Artists need anatomy breakdowns
+* Different species require different anatomical knowledge
+* Anatomy should be **biological**, not artistic
+
+We explored three alternatives:
+
+1. Only human anatomy ❌ (too limiting)
+2. Only animals ❌ (artists need humans too)
+3. Only drawing anatomy ❌ (breaks project scope)
+
+Therefore we created a **neutral, scientific anatomical model**.
+
+### **Intended Behavior**
+
+The anatomy module must:
+
+* explain bones, joints, structure
+* explain muscle origins/insertions
+* explain biomechanics
+* explain functional movement
+* work for ANY species (human, eagle, octopus, etc.)
+
+This gives the system **textbook-quality anatomical expertise**.
+
+---
+
+# **4. Architectural Impact of Prototype 3**
+
+Prototype 3 introduces major expansions in **ai_agents.py**.
+
+### **New module responsibilities:**
+
+| Feature            | Responsibility                          |
+| ------------------ | --------------------------------------- |
+| Practice Generator | Converts tasks → drills                 |
+| Skill Analysis     | Converts notes → evaluation             |
+| Mentor             | Conversational art advisor              |
+| Critique           | Structural art feedback engine          |
+| Anatomy            | Scientific multi-species anatomy expert |
+
+### **CLI Updates**
+
+New supported commands:
+
+```
+ai-generate-practice <id>
+ai-skill-analysis <id>
+ai-mentor <question>
+ai-critique <description>
+ai-anatomy <species> <body_part>
+```
+
+The main CLI router (`main.py`) is updated to include these commands with safe:
+
+* parsing
+* input validation
+* error messages
+
+---
+
+# **5. Data Model Impact**
+
+Prototype 3 does **not** change Note or Task models.
+
+AI agents only **read**:
+
+* notes.json
+* tasks.json
+
+No structural change is required.
+
+However, P3 encourages users to:
+
+* create more detailed notes
+* refine task descriptions
+* use richer tags
+* store structured content for better AI output
+
+---
+
+# **6. Constraints Acknowledged**
+
+Prototype 3 maintains all prior constraints:
+
+* Python only
+* JSON storage only
+* terminal only
+* no images
+* no external servers
+* portable across OS
+
+But extends:
+
+* AI complexity
+* user interaction sophistication
+
+---
+
+# **7. Roadmap Summary (Prototypes 1 → 3)**
+
+| Prototype | Focus        | What It Delivered                             |
+| --------- | ------------ | --------------------------------------------- |
+| **P1**    | Core system  | Notes, tasks, CLI, basic AI                   |
+| **P2**    | Refinement   | Editing, search upgrades, logging, timestamps |
+| **P3**    | Intelligence | 5 AI agents enabling full learning cycle      |
+
+Prototype 3 completes the first TRUE AI-powered version of ArtGrow.
+
+---
+
+# **8. Summary**
+
+Prototype 3 is built around a single philosophy:
+
+> “Artists learn fastest when feedback, anatomy, critique, practice design, and mentorship are tightly integrated.”
+
+These five AI modules represent the collective result of:
+
+* user need analysis
+* gap identification in P1 & P2
+* brainstorming sessions
+* workflow mapping
+* educational progression logic
+
+They transform ArtGrow from a PKMS into a **fully intelligent personal art growth system**.
+
+---
 
 
 
